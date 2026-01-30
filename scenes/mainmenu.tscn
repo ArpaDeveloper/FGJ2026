@@ -15,51 +15,89 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_natt5")
 
-[node name="Buttons" type="Node" parent="." unique_id=1618841112]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=553583291]
-offset_left = 418.0
-offset_top = 266.0
-offset_right = 653.0
-offset_bottom = 373.0
-theme_override_constants/separation = 10
-
-[node name="PlayButton" type="Button" parent="Buttons/VBoxContainer" unique_id=1460514828]
-layout_mode = 2
-text = "Play"
-
-[node name="SettingsButton" type="Button" parent="Buttons/VBoxContainer" unique_id=111208295]
-layout_mode = 2
-text = "Settings"
-
-[node name="ExitButton" type="Button" parent="Buttons/VBoxContainer" unique_id=1144529297]
-layout_mode = 2
-text = "Exit"
-
-[node name="Panel" type="Panel" parent="." unique_id=1964601304]
+[node name="BG" type="Panel" parent="." unique_id=1964601304]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 36.0
-offset_top = 3.0
-offset_right = 36.0
-offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_3vvtq")
 
-[node name="Label" type="Label" parent="." unique_id=1108743765]
+[node name="Menu1" type="Control" parent="." unique_id=936404098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainStuff" type="VBoxContainer" parent="Menu1" unique_id=553583291]
 layout_mode = 0
-offset_left = 271.0
-offset_top = 31.0
-offset_right = 782.0
-offset_bottom = 202.0
+offset_left = 421.0
+offset_top = 247.0
+offset_right = 651.0
+offset_bottom = 361.0
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="Menu1/MainStuff" unique_id=1460514828]
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="Menu1/MainStuff" unique_id=111208295]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="Menu1/MainStuff" unique_id=1144529297]
+layout_mode = 2
+text = "Exit"
+
+[node name="Title" type="Label" parent="Menu1" unique_id=1108743765]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 33.0
+offset_right = 778.0
+offset_bottom = 204.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Duck 5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Buttons/VBoxContainer/PlayButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/ExitButton" to="." method="_on_quit_pressed"]
+[node name="Menu2" type="Control" parent="." unique_id=1150298088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsStuff" type="VBoxContainer" parent="Menu2" unique_id=1439808999]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 389.0
+offset_right = 653.0
+offset_bottom = 502.0
+theme_override_constants/separation = 10
+
+[node name="BackButton" type="Button" parent="Menu2/OptionsStuff" unique_id=1377145339]
+layout_mode = 2
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu2/OptionsStuff" unique_id=13108876]
+autoplay = true
+
+[node name="Title" type="Label" parent="Menu2" unique_id=658783280]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 32.0
+offset_right = 781.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu1/MainStuff/PlayButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu1/MainStuff/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu1/MainStuff/ExitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu2/OptionsStuff/BackButton" to="." method="_on_back_pressed"]
