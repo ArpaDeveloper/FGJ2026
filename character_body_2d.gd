@@ -8,6 +8,10 @@ func _physics_process(_delta: float) -> void:
 	var input_direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_direction * speed
 	
+	# Rotate character to face movement direction
+	if velocity.length() > 0:
+		rotation = velocity.angle() + PI / 2
+	
 	# Move character
 	move_and_slide()
 	
@@ -15,10 +19,6 @@ func _physics_process(_delta: float) -> void:
 	if has_node("AnimatedSprite2D"):
 		var animated_sprite_2d: AnimatedSprite2D = get_node("AnimatedSprite2D")
 		var is_moving := velocity.length() > 0
-		
-		# Flip sprite based on horizontal movement
-		if velocity.x != 0:
-			animated_sprite_2d.flip_h = velocity.x < 0
 		
 		# Play appropriate animation
 		animated_sprite_2d.play("run" if is_moving else "idle")
