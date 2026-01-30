@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://uqbu2m2htie"]
+
+[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="1_p0vlq"]
+[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/duck-sketch.png" id="2_v6fml"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0vlq"]
+
+[node name="Player" type="Node2D" unique_id=1736325681]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1683455253]
+script = ExtResource("1_p0vlq")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1745338848]
+texture = ExtResource("2_v6fml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=242854224]
+shape = SubResource("CircleShape2D_p0vlq")
