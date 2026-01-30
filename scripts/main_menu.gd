@@ -5,7 +5,7 @@ extends Control
 @onready var options = $Menu2
 
 func _ready() -> void:
-§	menu.visible = true
+	menu.visible = true
 	options.visible = false
 
 
