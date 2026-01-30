@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @export var detection_range: float = 300.0
-@export var detection_angle: float = 60.0  # 60° cone (30° on each side)
+@export var detection_angle: float = 60.0 # 60° cone (30° on each side)
 
 var player: Node2D = null
 var player_detected: bool = false
 
 
 func _ready() -> void:
-	player = get_tree().root.get_node("Main/CharacterBody2D")  # Adjust path to your player
+	player = get_tree().root.get_node("Main/CharacterBody2D") # Adjust path to your player
 
 
 func _physics_process(_delta: float) -> void:
@@ -39,10 +39,10 @@ func is_player_in_cone() -> bool:
 	
 	# Check if within cone angle
 	var angle_to_player = to_player.angle()
-	var forward_angle = rotation - PI / 2  # Adjust if sprite faces different direction
+	var forward_angle = rotation - PI / 2 # Adjust if sprite faces different direction
 	var angle_diff = angle_difference(angle_to_player, forward_angle)
 	
-	return abs(angle_diff) < deg2rad(detection_angle / 2)
+	return abs(angle_diff) < deg_to_rad(detection_angle / 2)
 
 
 func angle_difference(angle1: float, angle2: float) -> float:
