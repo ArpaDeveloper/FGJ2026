@@ -1,16 +1,63 @@
 [gd_scene format=3 uid="uid://d2ursgbw4asfm"]
 
-[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://character_body_2d.gd" id="1_errlg"]
+[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="1_player"]
 [ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/hunter-sketch.png" id="2_bl13t"]
+[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/duck-sketch.png" id="2_iyx0m"]
+[ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="3_enemy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
+radius = 20.0
 
-[node name="Player" type="CharacterBody2D" unique_id=586620656]
-position = Vector2(692, 335)
-script = ExtResource("1_errlg")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(800, 50)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2018759819]
+[node name="TestScene" type="Node2D" unique_id=1487832176]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=274130425 groups=["player"]]
+position = Vector2(200, 300)
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1221856998]
 shape = SubResource("CircleShape2D_bl13t")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1341387825]
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=365774715]
+texture = ExtResource("2_iyx0m")
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=902981177]
+position = Vector2(600, 300)
+script = ExtResource("3_enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1537766189]
+shape = SubResource("CircleShape2D_bl13t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1301346956]
+modulate = Color(1, 0.3, 0.3, 1)
 texture = ExtResource("2_bl13t")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1785057595]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1232452926]
+position = Vector2(400, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=551236796]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=1926447037]
+position = Vector2(400, 575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=963426921]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=132239115]
+position = Vector2(25, 300)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=67984002]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=750073806]
+position = Vector2(775, 300)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=451846762]
+shape = SubResource("RectangleShape2D_wall")

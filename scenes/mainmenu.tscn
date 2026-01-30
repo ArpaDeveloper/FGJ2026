@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://bn7hjbxga1t3r"]
 
 [ext_resource type="Script" uid="uid://b7qrtu30foxrs" path="res://scripts/main_menu.gd" id="1_natt5"]
-[ext_resource type="Texture2D" uid="uid://ditdj7a3qx58h" path="res://pics/testduck1.png" id="2_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://5pc8clnugcuf" path="res://assets/testduck1.png" id="2_3vvtq"]
+[ext_resource type="Script" uid="uid://d2erfi6il82ya" path="res://scripts/settings.gd" id="3_3vvtq"]
+[ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/Duck5test.mp3" id="3_r3g3c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3vvtq"]
-texture = ExtResource("2_r3g3c")
+texture = ExtResource("2_3vvtq")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_r3g3c"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3vvtq"]
+color = Color(0.8813682, 0.55457234, 0, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3g3c"]
+bg_color = Color(0.8671119, 0.4931938, 0.07448041, 1)
 
 [node name="Mainmenu" type="Control" unique_id=1024783261]
 layout_mode = 3
@@ -68,23 +81,36 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 16.0
+offset_right = -1.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_3vvtq")
 
 [node name="OptionsStuff" type="VBoxContainer" parent="Menu2" unique_id=1439808999]
 layout_mode = 0
 offset_left = 418.0
 offset_top = 389.0
-offset_right = 653.0
-offset_bottom = 502.0
+offset_right = 654.0
+offset_bottom = 527.0
 theme_override_constants/separation = 10
+
+[node name="ItemList" type="ItemList" parent="Menu2/OptionsStuff" unique_id=55755084]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Menu2/OptionsStuff" unique_id=140317791]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_r3g3c")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_3vvtq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_r3g3c")
+max_value = 10.0
+value = 10.0
 
 [node name="BackButton" type="Button" parent="Menu2/OptionsStuff" unique_id=1377145339]
 layout_mode = 2
 text = "Back"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu2/OptionsStuff" unique_id=13108876]
-autoplay = true
 
 [node name="Title" type="Label" parent="Menu2" unique_id=658783280]
 layout_mode = 0
@@ -97,7 +123,15 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu2" unique_id=13108876]
+stream = ExtResource("3_r3g3c")
+volume_db = -25.58
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="Menu1/MainStuff/PlayButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu1/MainStuff/SettingsButton" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu1/MainStuff/ExitButton" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="Menu2/OptionsStuff/ItemList" to="." method="_on_resolutions_item_selected"]
+[connection signal="value_changed" from="Menu2/OptionsStuff/HSlider" to="." method="_on_volume_value_changed"]
 [connection signal="pressed" from="Menu2/OptionsStuff/BackButton" to="." method="_on_back_pressed"]
