@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bn7hjbxga1t3r"]
+
+[ext_resource type="Script" uid="uid://b7qrtu30foxrs" path="res://scripts/main_menu.gd" id="1_natt5"]
+[ext_resource type="Texture2D" uid="uid://ditdj7a3qx58h" path="res://pics/testduck1.png" id="2_r3g3c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3vvtq"]
+texture = ExtResource("2_r3g3c")
+
+[node name="Mainmenu" type="Control" unique_id=1024783261]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_natt5")
+
+[node name="Buttons" type="Node" parent="." unique_id=1618841112]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=553583291]
+offset_left = 418.0
+offset_top = 266.0
+offset_right = 653.0
+offset_bottom = 373.0
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="Buttons/VBoxContainer" unique_id=1460514828]
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="Buttons/VBoxContainer" unique_id=111208295]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="Buttons/VBoxContainer" unique_id=1144529297]
+layout_mode = 2
+text = "Exit"
+
+[node name="Panel" type="Panel" parent="." unique_id=1964601304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3vvtq")
+
+[node name="Label" type="Label" parent="." unique_id=1108743765]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 31.0
+offset_right = 782.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Duck 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/VBoxContainer/PlayButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/ExitButton" to="." method="_on_quit_pressed"]
