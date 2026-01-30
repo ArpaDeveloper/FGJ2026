@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
 @export var speed: float = 400.0
+@export var acceleration: float = 2500.0
+@export var friction: float = 2200.0
 
 
-func _physics_process(_delta: float) -> void:
-	# Get input and set velocity
+func _physics_process(delta: float) -> void:
+	# Get input direction
 	var input_direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = input_direction * speed
+	
+	# Apply acceleration or friction
+	if input_direction.length() > 0:
+		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
 	# Rotate character to face movement direction
 	if velocity.length() > 0:
