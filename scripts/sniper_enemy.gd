@@ -28,6 +28,10 @@ func _physics_process(delta: float) -> void:
 	
 	if is_chasing:
 		aim_progress = min(aim_progress + delta / aim_time, 1.0)
+		# Sniper shoots when fully aimed
+		if aim_progress >= 1.0:
+			trigger_fail()
+			return
 	else:
 		aim_progress = max(aim_progress - delta / aim_time, 0.0)
 	
@@ -35,8 +39,20 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	# Check if touching the player
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider and collider.is_in_group("player"):
+			trigger_fail()
+			return
+	
 	if show_cone:
 		queue_redraw()
+
+
+func trigger_fail() -> void:
+	get_tree().change_scene_to_file("res://scenes/failmenu.tscn")
 
 
 func _draw() -> void:

@@ -39,8 +39,21 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	# Check if touching the player
+	if is_chasing:
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+			if collider and collider.is_in_group("player"):
+				trigger_fail()
+				return
+	
 	if show_cone:
 		queue_redraw()
+
+
+func trigger_fail() -> void:
+	get_tree().change_scene_to_file("res://scenes/failmenu.tscn")
 
 
 func _draw() -> void:
