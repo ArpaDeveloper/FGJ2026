@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://buir6ftjhmf6i" path="res://assets/environment/darkgrass-tilesheet.png" id="3_7k4x1"]
 [ext_resource type="Texture2D" uid="uid://didio4f03u8so" path="res://assets/environment/weapons-on-ground.png" id="3_t1r2p"]
 [ext_resource type="Texture2D" uid="uid://d4eciuswa8x0j" path="res://assets/environment/roof1.png" id="4_c8twv"]
+[ext_resource type="Texture2D" uid="uid://b0he26bwxjoqk" path="res://assets/environment/barrel.png" id="4_tu70l"]
 [ext_resource type="Texture2D" uid="uid://drn3x676iswaw" path="res://assets/environment/mud.png" id="5_831e8"]
+[ext_resource type="Texture2D" uid="uid://bpi3ry22rdmcq" path="res://assets/environment/3barrels.png" id="5_c2162"]
 [ext_resource type="Texture2D" uid="uid://dwm76pws3maym" path="res://assets/environment/gravel_path.png" id="6_t1r2p"]
 [ext_resource type="Texture2D" uid="uid://w4ev15oj8k83" path="res://assets/environment/stand-roof-tiles-hunter-48px.png" id="7_tu70l"]
 [ext_resource type="Texture2D" uid="uid://dk1qovgb44cpd" path="res://assets/environment/table.png" id="10_tu70l"]
@@ -35,6 +37,14 @@ texture = ExtResource("2_831e8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5max"]
 texture = ExtResource("3_t1r2p")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y35bq"]
+texture = ExtResource("4_tu70l")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1w1i7"]
+texture = ExtResource("5_c2162")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylpj7"]
@@ -131,7 +141,6 @@ texture = ExtResource("11_c2162")
 
 [resource]
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_ylpj7")
 sources/0 = SubResource("TileSetAtlasSource_2bxmg")
 sources/3 = SubResource("TileSetAtlasSource_c2162")
 sources/4 = SubResource("TileSetAtlasSource_njexq")
@@ -142,3 +151,6 @@ sources/1 = SubResource("TileSetAtlasSource_anvck")
 sources/8 = SubResource("TileSetAtlasSource_m7gl2")
 sources/9 = SubResource("TileSetAtlasSource_8m4rt")
 sources/10 = SubResource("TileSetAtlasSource_r5max")
+sources/2 = SubResource("TileSetAtlasSource_ylpj7")
+sources/14 = SubResource("TileSetAtlasSource_y35bq")
+sources/15 = SubResource("TileSetAtlasSource_1w1i7")
