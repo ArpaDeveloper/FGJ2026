@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://drn3x676iswaw" path="res://assets/environment/mud.png" id="5_831e8"]
 [ext_resource type="Texture2D" uid="uid://bpi3ry22rdmcq" path="res://assets/environment/3barrels.png" id="5_c2162"]
 [ext_resource type="Texture2D" uid="uid://dwm76pws3maym" path="res://assets/environment/gravel_path.png" id="6_t1r2p"]
+[ext_resource type="Texture2D" uid="uid://drwj6abbh18r0" path="res://assets/environment/mask-black.png" id="7_d7lk7"]
 [ext_resource type="Texture2D" uid="uid://w4ev15oj8k83" path="res://assets/environment/stand-roof-tiles-hunter-48px.png" id="7_tu70l"]
 [ext_resource type="Texture2D" uid="uid://dk1qovgb44cpd" path="res://assets/environment/table.png" id="10_tu70l"]
 [ext_resource type="Texture2D" uid="uid://cgdtsjsx8x3gj" path="res://assets/environment/fishing_net.png" id="11_c2162"]
@@ -45,6 +46,10 @@ texture = ExtResource("4_tu70l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1w1i7"]
 texture = ExtResource("5_c2162")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdby"]
+texture = ExtResource("7_d7lk7")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylpj7"]
@@ -154,3 +159,4 @@ sources/10 = SubResource("TileSetAtlasSource_r5max")
 sources/2 = SubResource("TileSetAtlasSource_ylpj7")
 sources/14 = SubResource("TileSetAtlasSource_y35bq")
 sources/15 = SubResource("TileSetAtlasSource_1w1i7")
+sources/17 = SubResource("TileSetAtlasSource_wtdby")
