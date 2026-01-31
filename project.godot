@@ -19,6 +19,10 @@ run/main_scene="uid://bn7hjbxga1t3r"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="Duck5"
+
 [input]
 
 resume_pause={
