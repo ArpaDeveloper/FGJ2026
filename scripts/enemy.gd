@@ -1,34 +1,55 @@
 extends CharacterBody2D
 
 @export var speed: float = 100.0
+@export var patrol_speed: float = 50.0
 @export var detection_range: float = 300.0
 @export var detection_angle: float = 60.0
 @export var chase_angle: float = 120.0 # Wider angle while chasing
 @export var show_cone: bool = true
 @export var rotation_smoothing: float = 3.0 # higher = faster rotation
+@export var patrol_points: Array[Vector2] = []
+@export var patrol_wait_time: float = 1.0
+@export var return_delay: float = 2.0
 
 var player: Node2D = null
 var player_in_cone: bool = false
 var is_chasing: bool = false
+var current_patrol_index: int = 0
+var patrol_wait_timer: float = 0.0
+var is_waiting: bool = false
+var is_returning: bool = false
+var return_timer: float = 0.0
+var start_position: Vector2
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	start_position = global_position
+	
+	if patrol_points.is_empty():
+		var path = get_node_or_null("Path2D")
+		if path and path.curve:
+			for i in range(path.curve.point_count):
+				patrol_points.append(path.curve.get_point_position(i))
 
 
 func _physics_process(delta: float) -> void:
 	if not player:
 		return
 	
-
 	if is_chasing:
 		player_in_cone = is_player_in_cone_no_los(chase_angle)
-		is_chasing = player_in_cone
+		if not player_in_cone:
+			# Lost the player, start return delay
+			is_chasing = false
+			is_returning = true
+			return_timer = return_delay
 	else:
 		# Need LOS to start chasing
 		player_in_cone = is_player_in_cone_with_los(detection_angle)
 		if player_in_cone:
 			is_chasing = true
+			is_returning = false
 	
 	if is_chasing:
 		# Chase the player
@@ -46,12 +67,74 @@ func _physics_process(delta: float) -> void:
 		if is_touching_player():
 			trigger_fail()
 			return
-	else:
+	elif is_returning:
+		# Wait before returning to patrol
+		return_timer -= delta
 		velocity = Vector2.ZERO
-		move_and_slide()
+		if return_timer <= 0:
+			is_returning = false
+			# Find nearest patrol point to return to
+			find_nearest_patrol_point()
+	else:
+		# Patrol behavior
+		patrol(delta)
 	
 	if show_cone:
 		queue_redraw()
+
+
+func find_nearest_patrol_point() -> void:
+	if patrol_points.is_empty():
+		return
+	
+	var min_distance = INF
+	var nearest_index = 0
+	
+	for i in range(patrol_points.size()):
+		var global_point = start_position + patrol_points[i]
+		var distance = global_position.distance_to(global_point)
+		if distance < min_distance:
+			min_distance = distance
+			nearest_index = i
+	
+	current_patrol_index = nearest_index
+
+
+func patrol(delta: float) -> void:
+	if patrol_points.is_empty():
+		velocity = Vector2.ZERO
+		return
+	
+	# Wait at patrol point
+	if is_waiting:
+		patrol_wait_timer -= delta
+		if patrol_wait_timer <= 0:
+			is_waiting = false
+			current_patrol_index = (current_patrol_index + 1) % patrol_points.size()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
+	# Move to current patrol point
+	var target = patrol_points[current_patrol_index]
+	# Patrol points are offsets from starting position
+	var global_target = start_position + target
+	var direction = (global_target - global_position)
+	var distance = direction.length()
+	
+	if distance < 10: # Reached patrol point
+		is_waiting = true
+		patrol_wait_timer = patrol_wait_time
+		velocity = Vector2.ZERO
+	else:
+		direction = direction.normalized()
+		velocity = direction * patrol_speed
+		
+		# Smoothly rotate to face movement direction
+		var target_rotation = direction.angle() + PI / 2
+		rotation = lerp_angle(rotation, target_rotation, rotation_smoothing * delta)
+	
+	move_and_slide()
 
 
 func is_touching_player() -> bool:

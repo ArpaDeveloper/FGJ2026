@@ -11,6 +11,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
 radius = 20.0
 
+[sub_resource type="Curve2D" id="Curve2D_at5dv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 10, -174, 0, 0, 0, 0, 161, -192, 0, 0, 0, 0, 381, 179, 0, 0, 0, 0, -56, 299, 0, 0, 0, 0, -156, -190)
+}
+point_count = 5
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(1171, 50)
 
@@ -39,6 +45,9 @@ shape = SubResource("CircleShape2D_bl13t")
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1301346956]
 modulate = Color(1, 0.3, 0.3, 1)
 texture = ExtResource("4_lpvoh")
+
+[node name="Path2D" type="Path2D" parent="Enemy" unique_id=1753122187]
+curve = SubResource("Curve2D_at5dv")
 
 [node name="SniperEnemy" type="CharacterBody2D" parent="." unique_id=514840430]
 position = Vector2(352, 496)
@@ -117,6 +126,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_tree")
 
 [node name="Control" type="Control" parent="." unique_id=287212944]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
