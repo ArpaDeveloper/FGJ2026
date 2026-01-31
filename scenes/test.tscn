@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="5_at5dv"]
 [ext_resource type="Script" uid="uid://dip413ytt8ebv" path="res://scripts/sniper_enemy.gd" id="6_sniper"]
 [ext_resource type="Texture2D" uid="uid://bhva3x2m0v32s" path="res://assets/environment/tree1.png" id="7_tree"]
+[ext_resource type="Script" uid="uid://03h7osl0j0gp" path="res://scripts/mask_pickup.gd" id="8_mask"]
+[ext_resource type="Texture2D" uid="uid://bg7hvilspwlx1" path="res://assets/icons/settingsbutton.png" id="9_uacia"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
 radius = 20.0
@@ -22,6 +24,9 @@ size = Vector2(1171, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tree"]
 radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 25.0
 
 [node name="TestScene" type="Node2D" unique_id=1487832176]
 
@@ -126,7 +131,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_tree")
 
 [node name="Control" type="Control" parent="." unique_id=287212944]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,3 +145,15 @@ size_flags_vertical = 4
 
 [node name="Pausemenu" parent="Control" unique_id=598723302 instance=ExtResource("5_at5dv")]
 layout_mode = 1
+
+[node name="MaskPickup" type="Area2D" parent="." unique_id=1496911236]
+position = Vector2(120, 145)
+script = ExtResource("8_mask")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaskPickup" unique_id=511270137]
+shape = SubResource("CircleShape2D_pickup")
+
+[node name="Sprite2D" type="Sprite2D" parent="MaskPickup" unique_id=1702913227]
+modulate = Color(0.2, 0.8, 0.2, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_uacia")

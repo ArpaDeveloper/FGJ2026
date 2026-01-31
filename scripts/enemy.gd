@@ -20,6 +20,7 @@ var is_waiting: bool = false
 var is_returning: bool = false
 var return_timer: float = 0.0
 var start_position: Vector2
+var detection_delay_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -44,12 +45,28 @@ func _physics_process(delta: float) -> void:
 			is_chasing = false
 			is_returning = true
 			return_timer = return_delay
+			detection_delay_timer = 0.0
 	else:
 		# Need LOS to start chasing
 		player_in_cone = is_player_in_cone_with_los(detection_angle)
 		if player_in_cone:
-			is_chasing = true
-			is_returning = false
+			# Check if player has grace period active
+			var grace_time = 0.0
+			if player.get("grace_active") and player.get("grace_timer") != null:
+				grace_time = player.grace_timer
+			
+			if grace_time > 0:
+				detection_delay_timer += delta
+				if detection_delay_timer >= grace_time:
+					is_chasing = true
+					is_returning = false
+					detection_delay_timer = 0.0
+			else:
+				is_chasing = true
+				is_returning = false
+		else:
+			# Player left cone, reset detection delay
+			detection_delay_timer = 0.0
 	
 	if is_chasing:
 		# Chase the player

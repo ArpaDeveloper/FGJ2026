@@ -11,6 +11,7 @@ var player: Node2D = null
 var player_in_cone: bool = false
 var is_chasing: bool = false
 var aim_progress: float = 0.0 # 0 = just spotted, 1 = fully aimed
+var detection_delay_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -24,7 +25,26 @@ func _physics_process(delta: float) -> void:
 	var current_angle = chase_angle if is_chasing else detection_angle
 	player_in_cone = is_player_in_cone(current_angle)
 	
-	is_chasing = player_in_cone
+	if is_chasing:
+		if not player_in_cone:
+			is_chasing = false
+			detection_delay_timer = 0.0
+	else:
+		if player_in_cone:
+			# Check if player has grace period active
+			var grace_time = 0.0
+			if player.get("grace_active") and player.get("grace_timer") != null:
+				grace_time = player.grace_timer
+			
+			if grace_time > 0:
+				detection_delay_timer += delta
+				if detection_delay_timer >= grace_time:
+					is_chasing = true
+					detection_delay_timer = 0.0
+			else:
+				is_chasing = true
+		else:
+			detection_delay_timer = 0.0
 	
 	if is_chasing:
 		aim_progress = min(aim_progress + delta / aim_time, 1.0)

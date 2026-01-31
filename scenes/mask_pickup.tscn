@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4n578lrvlyb5"]
+
+[ext_resource type="Script" uid="uid://mask_pickup_script" path="res://scripts/mask_pickup.gd" id="1_mask"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 25.0
+
+[node name="MaskPickup" type="Area2D"]
+script = ExtResource("1_mask")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pickup")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.2, 0.8, 0.2, 1)
+scale = Vector2(0.5, 0.5)
