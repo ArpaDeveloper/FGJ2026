@@ -1,12 +1,16 @@
 [gd_resource type="TileSet" format=3 uid="uid://buqelv0axwqfr"]
 
 [ext_resource type="Texture2D" uid="uid://bygxal2r43bv7" path="res://assets/environment/water-spritesheet.png" id="1_i3unu"]
+[ext_resource type="Texture2D" uid="uid://ccotx0ug23m62" path="res://assets/environment/planks_tile.png" id="2_831e8"]
 [ext_resource type="Texture2D" uid="uid://b5els3vecirm" path="res://assets/environment/grass-tilesheet.png" id="2_y2xbu"]
 [ext_resource type="Texture2D" uid="uid://buir6ftjhmf6i" path="res://assets/environment/darkgrass-tilesheet.png" id="3_7k4x1"]
+[ext_resource type="Texture2D" uid="uid://didio4f03u8so" path="res://assets/environment/weapons-on-ground.png" id="3_t1r2p"]
 [ext_resource type="Texture2D" uid="uid://d4eciuswa8x0j" path="res://assets/environment/roof1.png" id="4_c8twv"]
 [ext_resource type="Texture2D" uid="uid://drn3x676iswaw" path="res://assets/environment/mud.png" id="5_831e8"]
 [ext_resource type="Texture2D" uid="uid://dwm76pws3maym" path="res://assets/environment/gravel_path.png" id="6_t1r2p"]
 [ext_resource type="Texture2D" uid="uid://w4ev15oj8k83" path="res://assets/environment/stand-roof-tiles-hunter-48px.png" id="7_tu70l"]
+[ext_resource type="Texture2D" uid="uid://dk1qovgb44cpd" path="res://assets/environment/table.png" id="10_tu70l"]
+[ext_resource type="Texture2D" uid="uid://cgdtsjsx8x3gj" path="res://assets/environment/fishing_net.png" id="11_c2162"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bxmg"]
 resource_name = "Water"
@@ -16,11 +20,22 @@ texture = ExtResource("1_i3unu")
 0:0/animation_frame_2/duration = 1.0
 0:0/animation_frame_3/duration = 1.0
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/animation_frame_0/duration = 1.0
 0:1/animation_frame_1/duration = 1.0
 0:1/animation_frame_2/duration = 1.0
 0:1/animation_frame_3/duration = 1.0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anvck"]
+texture = ExtResource("2_831e8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5max"]
+texture = ExtResource("3_t1r2p")
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylpj7"]
 resource_name = "Grass"
@@ -31,17 +46,23 @@ texture = ExtResource("2_y2xbu")
 1:1/0 = 0
 2:1/0 = 0
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/next_alternative_id = 2
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/animation_frame_0/duration = 1.0
 0:2/animation_frame_1/duration = 1.0
 0:2/animation_frame_2/duration = 1.0
 0:2/animation_frame_3/duration = 1.0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2162"]
 resource_name = "Darkgrass"
@@ -51,22 +72,29 @@ texture = ExtResource("3_7k4x1")
 1:1/0 = 0
 1:0/0 = 0
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
 3:1/0 = 0
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/animation_frame_0/duration = 1.0
 0:2/animation_frame_1/duration = 1.0
 0:2/animation_frame_2/duration = 1.0
 0:2/animation_frame_3/duration = 1.0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njexq"]
 resource_name = "Roof"
 texture = ExtResource("4_c8twv")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7lk7"]
 resource_name = "Mud"
@@ -91,7 +119,18 @@ texture = ExtResource("7_tu70l")
 1:2/0 = 0
 2:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7gl2"]
+texture = ExtResource("10_tu70l")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m4rt"]
+texture = ExtResource("11_c2162")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [resource]
+physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_ylpj7")
 sources/0 = SubResource("TileSetAtlasSource_2bxmg")
 sources/3 = SubResource("TileSetAtlasSource_c2162")
@@ -99,3 +138,7 @@ sources/4 = SubResource("TileSetAtlasSource_njexq")
 sources/5 = SubResource("TileSetAtlasSource_d7lk7")
 sources/6 = SubResource("TileSetAtlasSource_bux10")
 sources/7 = SubResource("TileSetAtlasSource_dv26a")
+sources/1 = SubResource("TileSetAtlasSource_anvck")
+sources/8 = SubResource("TileSetAtlasSource_m7gl2")
+sources/9 = SubResource("TileSetAtlasSource_8m4rt")
+sources/10 = SubResource("TileSetAtlasSource_r5max")
