@@ -3,10 +3,29 @@
 [ext_resource type="Script" uid="uid://b7qrtu30foxrs" path="res://scripts/main_menu.gd" id="1_natt5"]
 [ext_resource type="Texture2D" uid="uid://bx6rtesoj5ldf" path="res://assets/mainmenu/bgmainmenu1.png" id="2_3vvtq"]
 [ext_resource type="Script" uid="uid://d2erfi6il82ya" path="res://scripts/settings.gd" id="3_3vvtq"]
+[ext_resource type="Script" uid="uid://b46sqn6s56sr1" path="res://scripts/buttoniconshow.gd" id="3_7yvfd"]
 [ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/music/Duck5test.mp3" id="3_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://bnjsljjtfmb8w" path="res://assets/icons/playbutton.png" id="3_s5g8n"]
+[ext_resource type="Texture2D" uid="uid://bg7hvilspwlx1" path="res://assets/icons/settingsbutton.png" id="5_85riq"]
+[ext_resource type="Texture2D" uid="uid://bbkoqeej2muib" path="res://assets/icons/exitbutton.png" id="6_wf3n4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3vvtq"]
 texture = ExtResource("2_3vvtq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vvtq"]
+bg_color = Color(0, 0, 0, 0.49019608)
+corner_radius_top_left = 60
+corner_radius_bottom_right = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5g8n"]
+bg_color = Color(0, 0, 0, 0.49019608)
+corner_radius_top_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yvfd"]
+bg_color = Color(0, 0, 0, 0.49019608)
+corner_radius_top_left = 45
+corner_radius_bottom_right = 45
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_r3g3c"]
 color = Color(1, 1, 1, 1)
@@ -46,24 +65,51 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MainStuff" type="VBoxContainer" parent="Menu1" unique_id=553583291]
-layout_mode = 0
-offset_left = 421.0
-offset_top = 247.0
-offset_right = 651.0
-offset_bottom = 361.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -73.0
+offset_right = 230.0
+offset_bottom = 73.0
+grow_vertical = 2
 theme_override_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="Menu1/MainStuff" unique_id=1460514828]
 layout_mode = 2
-text = "Play"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_3vvtq")
+text = "Action"
+script = ExtResource("3_7yvfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu1/MainStuff/PlayButton" unique_id=1120980600]
+position = Vector2(41, 20)
+scale = Vector2(0.07512627, 0.09789156)
+texture = ExtResource("3_s5g8n")
 
 [node name="SettingsButton" type="Button" parent="Menu1/MainStuff" unique_id=111208295]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5g8n")
 text = "Settings"
+script = ExtResource("3_7yvfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu1/MainStuff/SettingsButton" unique_id=587211437]
+position = Vector2(39, 19.999992)
+scale = Vector2(0.065340914, 0.059487965)
+texture = ExtResource("5_85riq")
 
 [node name="ExitButton" type="Button" parent="Menu1/MainStuff" unique_id=1144529297]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7yvfd")
 text = "Exit"
+script = ExtResource("3_7yvfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menu1/MainStuff/ExitButton" unique_id=1441268444]
+position = Vector2(46, 21.999994)
+scale = Vector2(0.051609844, 0.052334346)
+texture = ExtResource("6_wf3n4")
 
 [node name="Title" type="Label" parent="Menu1" unique_id=1108743765]
 visible = false
@@ -82,10 +128,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 16.0
-offset_right = -1.0
-offset_bottom = 16.0
+offset_top = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_3vvtq")
@@ -130,8 +174,14 @@ volume_db = -25.58
 autoplay = true
 bus = &"Music"
 
+[connection signal="mouse_entered" from="Menu1/MainStuff/PlayButton" to="Menu1/MainStuff/PlayButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu1/MainStuff/PlayButton" to="Menu1/MainStuff/PlayButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu1/MainStuff/PlayButton" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Menu1/MainStuff/SettingsButton" to="Menu1/MainStuff/SettingsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu1/MainStuff/SettingsButton" to="Menu1/MainStuff/SettingsButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu1/MainStuff/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Menu1/MainStuff/ExitButton" to="Menu1/MainStuff/ExitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu1/MainStuff/ExitButton" to="Menu1/MainStuff/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu1/MainStuff/ExitButton" to="." method="_on_quit_pressed"]
 [connection signal="item_selected" from="Menu2/OptionsStuff/ItemList" to="." method="_on_resolutions_item_selected"]
 [connection signal="value_changed" from="Menu2/OptionsStuff/HSlider" to="." method="_on_volume_value_changed"]
