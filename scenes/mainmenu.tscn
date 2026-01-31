@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bnjsljjtfmb8w" path="res://assets/icons/playbutton.png" id="3_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://bg7hvilspwlx1" path="res://assets/icons/settingsbutton.png" id="5_85riq"]
 [ext_resource type="Texture2D" uid="uid://bbkoqeej2muib" path="res://assets/icons/exitbutton.png" id="6_wf3n4"]
+[ext_resource type="Script" uid="uid://h4wrti67w16h" path="res://scripts/resolutionsautomatic.gd" id="8_h73c4"]
+[ext_resource type="Texture2D" uid="uid://dxf1tv0gdulul" path="res://assets/icons/backbutton.png" id="8_wf3n4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3vvtq"]
 texture = ExtResource("2_3vvtq")
@@ -27,16 +29,10 @@ bg_color = Color(0, 0, 0, 0.49019608)
 corner_radius_top_left = 45
 corner_radius_bottom_right = 45
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_r3g3c"]
-color = Color(1, 1, 1, 1)
-thickness = 6
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_3vvtq"]
-color = Color(0.8813682, 0.55457234, 0, 1)
-thickness = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3g3c"]
-bg_color = Color(0.8671119, 0.4931938, 0.07448041, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h73c4"]
+bg_color = Color(0, 0, 0, 0.49019608)
+corner_radius_top_right = 45
+corner_radius_bottom_left = 45
 
 [node name="Mainmenu" type="Control" unique_id=1024783261]
 layout_mode = 3
@@ -79,36 +75,36 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_3vvtq")
-text = "Action"
+text = "ACTION"
 script = ExtResource("3_7yvfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Menu1/MainStuff/PlayButton" unique_id=1120980600]
-position = Vector2(41, 20)
-scale = Vector2(0.07512627, 0.09789156)
+position = Vector2(38, 19.999996)
+scale = Vector2(0.051452022, 0.06551203)
 texture = ExtResource("3_s5g8n")
 
 [node name="SettingsButton" type="Button" parent="Menu1/MainStuff" unique_id=111208295]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_s5g8n")
-text = "Settings"
+text = "OPTIONS"
 script = ExtResource("3_7yvfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Menu1/MainStuff/SettingsButton" unique_id=587211437]
-position = Vector2(39, 19.999992)
-scale = Vector2(0.065340914, 0.059487965)
+position = Vector2(203, 21.999989)
+scale = Vector2(0.041508842, 0.043298192)
 texture = ExtResource("5_85riq")
 
 [node name="ExitButton" type="Button" parent="Menu1/MainStuff" unique_id=1144529297]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_7yvfd")
-text = "Exit"
+text = "EXIT"
 script = ExtResource("3_7yvfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Menu1/MainStuff/ExitButton" unique_id=1441268444]
-position = Vector2(46, 21.999994)
-scale = Vector2(0.051609844, 0.052334346)
+position = Vector2(48.000015, 21.999992)
+scale = Vector2(0.038431186, 0.038215365)
 texture = ExtResource("6_wf3n4")
 
 [node name="Title" type="Label" parent="Menu1" unique_id=1108743765]
@@ -135,38 +131,59 @@ grow_vertical = 2
 script = ExtResource("3_3vvtq")
 
 [node name="OptionsStuff" type="VBoxContainer" parent="Menu2" unique_id=1439808999]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 389.0
-offset_right = 654.0
-offset_bottom = 527.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -168.0
+offset_right = 238.0
+offset_bottom = 72.0
+grow_vertical = 2
 theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Title2" type="Label" parent="Menu2/OptionsStuff" unique_id=1040930007]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resolutions" type="OptionButton" parent="Menu2/OptionsStuff" unique_id=2085035512]
+layout_mode = 2
+script = ExtResource("8_h73c4")
+
+[node name="MuteBox" type="CheckButton" parent="Menu2/OptionsStuff" unique_id=488396604]
+layout_mode = 2
+text = "MUTE"
+
+[node name="Volumetext" type="Label" parent="Menu2/OptionsStuff" unique_id=658783280]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="Menu2/OptionsStuff" unique_id=55755084]
 layout_mode = 2
 
 [node name="HSlider" type="HSlider" parent="Menu2/OptionsStuff" unique_id=140317791]
 layout_mode = 2
-theme_override_styles/slider = SubResource("StyleBoxLine_r3g3c")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_3vvtq")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_r3g3c")
 max_value = 10.0
 value = 10.0
 
 [node name="BackButton" type="Button" parent="Menu2/OptionsStuff" unique_id=1377145339]
 layout_mode = 2
-text = "Back"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h73c4")
+text = "BACK"
+script = ExtResource("3_7yvfd")
 
-[node name="Title" type="Label" parent="Menu2" unique_id=658783280]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 32.0
-offset_right = 781.0
-offset_bottom = 203.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="Menu2/OptionsStuff/BackButton" unique_id=1709006331]
+position = Vector2(49.000015, 21.999992)
+scale = Vector2(0.038431186, 0.038215365)
+texture = ExtResource("8_wf3n4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu2" unique_id=13108876]
 stream = ExtResource("3_r3g3c")
@@ -183,6 +200,10 @@ bus = &"Music"
 [connection signal="mouse_entered" from="Menu1/MainStuff/ExitButton" to="Menu1/MainStuff/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menu1/MainStuff/ExitButton" to="Menu1/MainStuff/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu1/MainStuff/ExitButton" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="Menu2/OptionsStuff/resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="toggled" from="Menu2/OptionsStuff/MuteBox" to="." method="_on_mute_box_toggled"]
 [connection signal="item_selected" from="Menu2/OptionsStuff/ItemList" to="." method="_on_resolutions_item_selected"]
 [connection signal="value_changed" from="Menu2/OptionsStuff/HSlider" to="." method="_on_volume_value_changed"]
+[connection signal="mouse_entered" from="Menu2/OptionsStuff/BackButton" to="Menu2/OptionsStuff/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu2/OptionsStuff/BackButton" to="Menu2/OptionsStuff/BackButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu2/OptionsStuff/BackButton" to="." method="_on_back_pressed"]
