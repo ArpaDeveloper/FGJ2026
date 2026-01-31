@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k0badsavl3rf"
-path="res://.godot/imported/water_farme1.png-24dd54da80401123dcf1b35222894907.ctex"
+uid="uid://bpi3ry22rdmcq"
+path="res://.godot/imported/3barrels.png-c2587a7589d63af200777a875f524999.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water_farme1.png"
-dest_files=["res://.godot/imported/water_farme1.png-24dd54da80401123dcf1b35222894907.ctex"]
+source_file="res://assets/environment/3barrels.png"
+dest_files=["res://.godot/imported/3barrels.png-c2587a7589d63af200777a875f524999.ctex"]
 
 [params]
 

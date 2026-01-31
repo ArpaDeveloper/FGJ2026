@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ukfo12mt1pb"
-path="res://.godot/imported/worm-tile-spritesheet.png-782e37ed31f18c324b2fc7fafdb7a46d.ctex"
+uid="uid://ba1jjsa5iokv"
+path="res://.godot/imported/water_frame2.png-96943234c0ca0f7f44bd8a9ef74d196c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/worm-tile-spritesheet.png"
-dest_files=["res://.godot/imported/worm-tile-spritesheet.png-782e37ed31f18c324b2fc7fafdb7a46d.ctex"]
+source_file="res://assets/environment/water_frame2.png"
+dest_files=["res://.godot/imported/water_frame2.png-96943234c0ca0f7f44bd8a9ef74d196c.ctex"]
 
 [params]
 

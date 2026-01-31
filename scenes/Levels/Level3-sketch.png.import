@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccotx0ug23m62"
-path="res://.godot/imported/planks_tile.png-09f8642a27d267b71370233c9a2457dd.ctex"
+uid="uid://c60xkljcaiaje"
+path="res://.godot/imported/Level3-sketch.png-bfe9399067a01ecd52954b44d6c33214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planks_tile.png"
-dest_files=["res://.godot/imported/planks_tile.png-09f8642a27d267b71370233c9a2457dd.ctex"]
+source_file="res://scenes/Levels/Level3-sketch.png"
+dest_files=["res://.godot/imported/Level3-sketch.png-bfe9399067a01ecd52954b44d6c33214.ctex"]
 
 [params]
 

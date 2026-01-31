@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bygxal2r43bv7"
-path="res://.godot/imported/water-spritesheet.png-9cd162f310ca08e2bf50cbafd59f0262.ctex"
+uid="uid://dxf1tv0gdulul"
+path="res://.godot/imported/backbutton.png-c3d44148802a6c67ad9896264ff6fd49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water-spritesheet.png"
-dest_files=["res://.godot/imported/water-spritesheet.png-9cd162f310ca08e2bf50cbafd59f0262.ctex"]
+source_file="res://assets/icons/backbutton.png"
+dest_files=["res://.godot/imported/backbutton.png-c3d44148802a6c67ad9896264ff6fd49.ctex"]
 
 [params]
 

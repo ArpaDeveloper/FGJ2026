@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6kf7o8exfcck"
-path="res://.godot/imported/mushroom-tile.png-7bd5be2708b37273bc33ed2cbed93f09.ctex"
+uid="uid://b1ukfo12mt1pb"
+path="res://.godot/imported/worm-tile-spritesheet.png-b6e859d43e1469d87abb00b8b53eff15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mushroom-tile.png"
-dest_files=["res://.godot/imported/mushroom-tile.png-7bd5be2708b37273bc33ed2cbed93f09.ctex"]
+source_file="res://assets/environment/worm-tile-spritesheet.png"
+dest_files=["res://.godot/imported/worm-tile-spritesheet.png-b6e859d43e1469d87abb00b8b53eff15.ctex"]
 
 [params]
 

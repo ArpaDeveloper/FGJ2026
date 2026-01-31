@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1iy2xv3hdh6w"
-path="res://.godot/imported/Level4-sketch.png-d874f4ce9f67a59f75c3aae1eff0aa7f.ctex"
+uid="uid://bbkoqeej2muib"
+path="res://.godot/imported/exitbutton.png-45fd5f175e53ab7e593381028fa9f5cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Level4-sketch.png"
-dest_files=["res://.godot/imported/Level4-sketch.png-d874f4ce9f67a59f75c3aae1eff0aa7f.ctex"]
+source_file="res://assets/icons/exitbutton.png"
+dest_files=["res://.godot/imported/exitbutton.png-45fd5f175e53ab7e593381028fa9f5cd.ctex"]
 
 [params]
 

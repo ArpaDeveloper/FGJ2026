@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bn7hjbxga1t3r"]
 
 [ext_resource type="Script" uid="uid://b7qrtu30foxrs" path="res://scripts/main_menu.gd" id="1_natt5"]
-[ext_resource type="Texture2D" uid="uid://5pc8clnugcuf" path="res://assets/testduck1.png" id="2_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://bx6rtesoj5ldf" path="res://assets/mainmenu/bgmainmenu1.png" id="2_3vvtq"]
 [ext_resource type="Script" uid="uid://d2erfi6il82ya" path="res://scripts/settings.gd" id="3_3vvtq"]
-[ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/Duck5test.mp3" id="3_r3g3c"]
+[ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/music/Duck5test.mp3" id="3_r3g3c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3vvtq"]
 texture = ExtResource("2_3vvtq")
@@ -66,6 +66,7 @@ layout_mode = 2
 text = "Exit"
 
 [node name="Title" type="Label" parent="Menu1" unique_id=1108743765]
+visible = false
 layout_mode = 0
 offset_left = 267.0
 offset_top = 33.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4yyjde3a5mgr"
-path="res://.godot/imported/hunter-sketch.png-c2aa89f619dbb2439f39bdabf4037063.ctex"
+uid="uid://k0badsavl3rf"
+path="res://.godot/imported/water_farme1.png-345524fa44f47e8ebc5e82201c88cef3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hunter-sketch.png"
-dest_files=["res://.godot/imported/hunter-sketch.png-c2aa89f619dbb2439f39bdabf4037063.ctex"]
+source_file="res://assets/environment/water_farme1.png"
+dest_files=["res://.godot/imported/water_farme1.png-345524fa44f47e8ebc5e82201c88cef3.ctex"]
 
 [params]
 

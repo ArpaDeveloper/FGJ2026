@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba1jjsa5iokv"
-path="res://.godot/imported/water_frame2.png-bb32cbf8995afc200f71af93c02950aa.ctex"
+uid="uid://bnjsljjtfmb8w"
+path="res://.godot/imported/playbutton.png-cead25c848ece34c2a1c89f00ed2fdb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water_frame2.png"
-dest_files=["res://.godot/imported/water_frame2.png-bb32cbf8995afc200f71af93c02950aa.ctex"]
+source_file="res://assets/icons/playbutton.png"
+dest_files=["res://.godot/imported/playbutton.png-cead25c848ece34c2a1c89f00ed2fdb5.ctex"]
 
 [params]
 

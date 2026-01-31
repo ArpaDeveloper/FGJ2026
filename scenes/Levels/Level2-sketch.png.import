@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpxdvwe00kp65"
-path="res://.godot/imported/water_frame3.png-455239bfe4ccf8f9531cab06e44ac379.ctex"
+uid="uid://chm6wvnl5l3un"
+path="res://.godot/imported/Level2-sketch.png-987bbcd4f67a4fe7bd51edc16ec7613f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water_frame3.png"
-dest_files=["res://.godot/imported/water_frame3.png-455239bfe4ccf8f9531cab06e44ac379.ctex"]
+source_file="res://scenes/Levels/Level2-sketch.png"
+dest_files=["res://.godot/imported/Level2-sketch.png-987bbcd4f67a4fe7bd51edc16ec7613f.ctex"]
 
 [params]
 

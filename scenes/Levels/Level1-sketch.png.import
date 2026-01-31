@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5pc8clnugcuf"
-path="res://.godot/imported/testduck1.png-e969db24f64559709344631e57255d33.ctex"
+uid="uid://c6hsui1no27w8"
+path="res://.godot/imported/Level1-sketch.png-c3e411daa1d7a1fd96c5648aa04c53a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/testduck1.png"
-dest_files=["res://.godot/imported/testduck1.png-e969db24f64559709344631e57255d33.ctex"]
+source_file="res://scenes/Levels/Level1-sketch.png"
+dest_files=["res://.godot/imported/Level1-sketch.png-c3e411daa1d7a1fd96c5648aa04c53a7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpi3ry22rdmcq"
-path="res://.godot/imported/3barrels.png-eb3ddcbfe67cec0bb5449ffde3a39d5d.ctex"
+uid="uid://bygxal2r43bv7"
+path="res://.godot/imported/water-spritesheet.png-bb217e15867f72e5f3384fb9be3a752d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/3barrels.png"
-dest_files=["res://.godot/imported/3barrels.png-eb3ddcbfe67cec0bb5449ffde3a39d5d.ctex"]
+source_file="res://assets/environment/water-spritesheet.png"
+dest_files=["res://.godot/imported/water-spritesheet.png-bb217e15867f72e5f3384fb9be3a752d.ctex"]
 
 [params]
 

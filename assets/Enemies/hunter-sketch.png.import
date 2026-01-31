@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6hsui1no27w8"
-path="res://.godot/imported/Level1-sketch.png-f2b8f7d475663147e191af7fe26ca497.ctex"
+uid="uid://b4yyjde3a5mgr"
+path="res://.godot/imported/hunter-sketch.png-0e86f14b78535c96db201f41b25454fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Level1-sketch.png"
-dest_files=["res://.godot/imported/Level1-sketch.png-f2b8f7d475663147e191af7fe26ca497.ctex"]
+source_file="res://assets/Enemies/hunter-sketch.png"
+dest_files=["res://.godot/imported/hunter-sketch.png-0e86f14b78535c96db201f41b25454fe.ctex"]
 
 [params]
 

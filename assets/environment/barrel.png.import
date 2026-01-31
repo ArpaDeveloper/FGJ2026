@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhqyg5kbyj78"
-path="res://.godot/imported/water_frame4.png-13beb254a8c4e398de91180f23f3daea.ctex"
+uid="uid://b0he26bwxjoqk"
+path="res://.godot/imported/barrel.png-58efb0a82afc769acedbb577d3a35c7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water_frame4.png"
-dest_files=["res://.godot/imported/water_frame4.png-13beb254a8c4e398de91180f23f3daea.ctex"]
+source_file="res://assets/environment/barrel.png"
+dest_files=["res://.godot/imported/barrel.png-58efb0a82afc769acedbb577d3a35c7c.ctex"]
 
 [params]
 

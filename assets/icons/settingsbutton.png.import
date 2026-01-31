@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhius705x5lka"
-path="res://.godot/imported/tree2.png-bc5512a08e465109896bc84ae368df0d.ctex"
+uid="uid://bg7hvilspwlx1"
+path="res://.godot/imported/settingsbutton.png-b2183ee54344bb6cf18b9d9d1738f12f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree2.png"
-dest_files=["res://.godot/imported/tree2.png-bc5512a08e465109896bc84ae368df0d.ctex"]
+source_file="res://assets/icons/settingsbutton.png"
+dest_files=["res://.godot/imported/settingsbutton.png-b2183ee54344bb6cf18b9d9d1738f12f.ctex"]
 
 [params]
 

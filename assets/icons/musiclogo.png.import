@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://disyyunm2blv4"
-path="res://.godot/imported/duck-sketch.png-095f2db262d0fe787503f31199a93334.ctex"
+uid="uid://cprkxgqky58q4"
+path="res://.godot/imported/musiclogo.png-5487c12293e8547f5225c9f296837302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/duck-sketch.png"
-dest_files=["res://.godot/imported/duck-sketch.png-095f2db262d0fe787503f31199a93334.ctex"]
+source_file="res://assets/icons/musiclogo.png"
+dest_files=["res://.godot/imported/musiclogo.png-5487c12293e8547f5225c9f296837302.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhva3x2m0v32s"
-path="res://.godot/imported/tree1.png-5ce797198e3ffe75db98e649ec75530a.ctex"
+uid="uid://ccotx0ug23m62"
+path="res://.godot/imported/planks_tile.png-4a1c10a7ecad475941fd4103585af26b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree1.png"
-dest_files=["res://.godot/imported/tree1.png-5ce797198e3ffe75db98e649ec75530a.ctex"]
+source_file="res://assets/environment/planks_tile.png"
+dest_files=["res://.godot/imported/planks_tile.png-4a1c10a7ecad475941fd4103585af26b.ctex"]
 
 [params]
 
