@@ -8,10 +8,123 @@
 [ext_resource type="Script" uid="uid://dip413ytt8ebv" path="res://scripts/sniper_enemy.gd" id="6_sniper"]
 [ext_resource type="Texture2D" uid="uid://bhva3x2m0v32s" path="res://assets/environment/tree1.png" id="7_tree"]
 [ext_resource type="Script" uid="uid://03h7osl0j0gp" path="res://scripts/mask_pickup.gd" id="8_mask"]
-[ext_resource type="Texture2D" uid="uid://bg7hvilspwlx1" path="res://assets/icons/settingsbutton.png" id="9_uacia"]
+[ext_resource type="Texture2D" path="res://assets/environment/mask-black.png" id="9_mask_tex"]
+[ext_resource type="Texture2D" path="res://assets/Player/duck-walk-sheet.png" id="10_duckwalk"]
+[ext_resource type="Texture2D" path="res://assets/Player/duck-stealthy-sheet.png" id="11_duckstealth"]
+[ext_resource type="Texture2D" path="res://assets/Player/duck-stealthy.png" id="12_duckstealthidle"]
+[ext_resource type="Texture2D" path="res://assets/Enemies/hunter-walk-sheet.png" id="13_hunterwalk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
 radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk0"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk1"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk2"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk3"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk4"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk5"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk6"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk7"]
+atlas = ExtResource("10_duckwalk")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth0"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth1"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth2"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth3"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth4"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth5"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth6"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth7"]
+atlas = ExtResource("11_duckstealth")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duck"]
+animations = [{
+"frames": [
+{"duration": 1.0, "texture": ExtResource("2_j5jx5")}
+],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [
+{"duration": 1.0, "texture": ExtResource("12_duckstealthidle")}
+],
+"loop": true,
+"name": &"stealth_idle",
+"speed": 1.0
+}, {
+"frames": [
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk0")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk1")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk2")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk3")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk4")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk5")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk6")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_walk7")}
+],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}, {
+"frames": [
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth0")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth1")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth2")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth3")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth4")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth5")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth6")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_stealth7")}
+],
+"loop": true,
+"name": &"stealth",
+"speed": 10.0
+}]
 
 [sub_resource type="Curve2D" id="Curve2D_at5dv"]
 _data = {
@@ -28,6 +141,62 @@ radius = 30.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
 radius = 25.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter0"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter1"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter2"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter3"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter4"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter5"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter6"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter7"]
+atlas = ExtResource("13_hunterwalk")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hunter"]
+animations = [{
+"frames": [
+{"duration": 1.0, "texture": ExtResource("4_lpvoh")}
+],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter0")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter1")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter2")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter3")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter4")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter5")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter6")},
+{"duration": 1.0, "texture": SubResource("AtlasTexture_hunter7")}
+],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
 [node name="TestScene" type="Node2D" unique_id=1487832176]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=274130425 groups=["player"]]
@@ -37,8 +206,10 @@ script = ExtResource("1_player")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1221856998]
 shape = SubResource("CircleShape2D_bl13t")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=365774715]
-texture = ExtResource("2_j5jx5")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_duck")
+animation = &"walk"
+autoplay = "walk"
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=902981177]
 position = Vector2(600, 300)
@@ -47,9 +218,11 @@ script = ExtResource("3_enemy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1537766189]
 shape = SubResource("CircleShape2D_bl13t")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1301346956]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 modulate = Color(1, 0.3, 0.3, 1)
-texture = ExtResource("4_lpvoh")
+sprite_frames = SubResource("SpriteFrames_hunter")
+animation = &"walk"
+autoplay = "walk"
 
 [node name="Path2D" type="Path2D" parent="Enemy" unique_id=1753122187]
 curve = SubResource("Curve2D_at5dv")
@@ -62,9 +235,11 @@ script = ExtResource("6_sniper")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SniperEnemy" unique_id=129892849]
 shape = SubResource("CircleShape2D_bl13t")
 
-[node name="Sprite2D" type="Sprite2D" parent="SniperEnemy" unique_id=1521986020]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SniperEnemy"]
 modulate = Color(0.5, 0.3, 1, 1)
-texture = ExtResource("4_lpvoh")
+sprite_frames = SubResource("SpriteFrames_hunter")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Walls" type="Node2D" parent="." unique_id=1785057595]
 
@@ -154,6 +329,5 @@ script = ExtResource("8_mask")
 shape = SubResource("CircleShape2D_pickup")
 
 [node name="Sprite2D" type="Sprite2D" parent="MaskPickup" unique_id=1702913227]
-modulate = Color(0.2, 0.8, 0.2, 1)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_uacia")
+scale = Vector2(1, 1)
+texture = ExtResource("9_mask_tex")

@@ -96,8 +96,21 @@ func _physics_process(delta: float) -> void:
 		# Patrol behavior
 		patrol(delta)
 	
+	# Update animation based on movement
+	_update_animation()
+	
 	if show_cone:
 		queue_redraw()
+
+
+func _update_animation() -> void:
+	if not has_node("AnimatedSprite2D"):
+		return
+	var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	if velocity.length() > 10:
+		anim_sprite.play("walk")
+	else:
+		anim_sprite.play("idle")
 
 
 func find_nearest_patrol_point() -> void:

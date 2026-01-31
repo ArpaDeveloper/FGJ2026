@@ -10,8 +10,6 @@ var has_mask: bool = false
 var grace_active: bool = false
 var grace_timer: float = 0.0
 var cooldown_timer: float = 0.0
-var original_texture: Texture2D = null
-var goose_texture: Texture2D = preload("res://assets/Enemies/goose.png")
 
 
 func _physics_process(delta: float) -> void:
@@ -43,13 +41,20 @@ func _physics_process(delta: float) -> void:
 	# Move character
 	move_and_slide()
 	
-	# Animation handling (only if AnimatedSprite2D exists)
+	# Animation handling
 	if has_node("AnimatedSprite2D"):
-		var animated_sprite_2d: AnimatedSprite2D = get_node("AnimatedSprite2D")
-		var is_moving := velocity.length() > 0
+		var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+		var is_moving = velocity.length() > 10
 		
-		# Play appropriate animation
-		animated_sprite_2d.play("run" if is_moving else "idle")
+		if grace_active:
+			if is_moving:
+				anim_sprite.play("stealth")
+			else:
+				anim_sprite.play("stealth_idle")
+		elif is_moving:
+			anim_sprite.play("walk")
+		else:
+			anim_sprite.play("idle")
 
 
 func collect_mask() -> void:
@@ -60,20 +65,8 @@ func activate_mask() -> void:
 	grace_active = true
 	grace_timer = grace_duration
 	cooldown_timer = mask_cooldown
-	_set_grace_visual(true)
 
 
-func _set_grace_visual(active: bool) -> void:
-	var sprite = get_node_or_null("Sprite2D")
-	if not sprite:
-		return
-	
-	if active:
-		# Store original texture and switch to goose
-		if original_texture == null:
-			original_texture = sprite.texture
-		sprite.texture = goose_texture
-	else:
-		# Restore original texture
-		if original_texture:
-			sprite.texture = original_texture
+func _set_grace_visual(_active: bool) -> void:
+	# Animation is now handled in _physics_process
+	pass
