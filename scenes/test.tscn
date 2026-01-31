@@ -219,7 +219,6 @@ script = ExtResource("3_enemy")
 shape = SubResource("CircleShape2D_bl13t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
-modulate = Color(1, 0.3, 0.3, 1)
 sprite_frames = SubResource("SpriteFrames_hunter")
 animation = &"walk"
 autoplay = "walk"
@@ -236,7 +235,6 @@ script = ExtResource("6_sniper")
 shape = SubResource("CircleShape2D_bl13t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SniperEnemy"]
-modulate = Color(0.5, 0.3, 1, 1)
 sprite_frames = SubResource("SpriteFrames_hunter")
 animation = &"idle"
 autoplay = "idle"
