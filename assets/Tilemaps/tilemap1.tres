@@ -1,0 +1,101 @@
+[gd_resource type="TileSet" format=3 uid="uid://buqelv0axwqfr"]
+
+[ext_resource type="Texture2D" uid="uid://bygxal2r43bv7" path="res://assets/environment/water-spritesheet.png" id="1_i3unu"]
+[ext_resource type="Texture2D" uid="uid://b5els3vecirm" path="res://assets/environment/grass-tilesheet.png" id="2_y2xbu"]
+[ext_resource type="Texture2D" uid="uid://buir6ftjhmf6i" path="res://assets/environment/darkgrass-tilesheet.png" id="3_7k4x1"]
+[ext_resource type="Texture2D" uid="uid://d4eciuswa8x0j" path="res://assets/environment/roof1.png" id="4_c8twv"]
+[ext_resource type="Texture2D" uid="uid://drn3x676iswaw" path="res://assets/environment/mud.png" id="5_831e8"]
+[ext_resource type="Texture2D" uid="uid://dwm76pws3maym" path="res://assets/environment/gravel_path.png" id="6_t1r2p"]
+[ext_resource type="Texture2D" uid="uid://w4ev15oj8k83" path="res://assets/environment/stand-roof-tiles-hunter-48px.png" id="7_tu70l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bxmg"]
+resource_name = "Water"
+texture = ExtResource("1_i3unu")
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylpj7"]
+resource_name = "Grass"
+texture = ExtResource("2_y2xbu")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+4:2/next_alternative_id = 2
+4:2/0 = 0
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2162"]
+resource_name = "Darkgrass"
+texture = ExtResource("3_7k4x1")
+0:1/0 = 0
+0:0/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njexq"]
+resource_name = "Roof"
+texture = ExtResource("4_c8twv")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7lk7"]
+resource_name = "Mud"
+texture = ExtResource("5_831e8")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bux10"]
+resource_name = "Gravel"
+texture = ExtResource("6_t1r2p")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dv26a"]
+resource_name = "SniperTover"
+texture = ExtResource("7_tu70l")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[resource]
+sources/2 = SubResource("TileSetAtlasSource_ylpj7")
+sources/0 = SubResource("TileSetAtlasSource_2bxmg")
+sources/3 = SubResource("TileSetAtlasSource_c2162")
+sources/4 = SubResource("TileSetAtlasSource_njexq")
+sources/5 = SubResource("TileSetAtlasSource_d7lk7")
+sources/6 = SubResource("TileSetAtlasSource_bux10")
+sources/7 = SubResource("TileSetAtlasSource_dv26a")
