@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c4v6vfg67o88p"]
+
+[ext_resource type="Script" uid="uid://bql46sdd6l8ha" path="res://scripts/endcredits.gd" id="1_nvx86"]
+[ext_resource type="Texture2D" uid="uid://bfdysu0avrf6d" path="res://assets/UIbg/endcredits.png" id="2_vhxwg"]
+[ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/music/Duck5test.mp3" id="3_vhxwg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r33we"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpyy4"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 60
+corner_radius_bottom_right = 60
+
+[node name="endcredits" type="Control" unique_id=598723302]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nvx86")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=775588157]
+position = Vector2(576, 324)
+scale = Vector2(1.2190478, 1.3278688)
+texture = ExtResource("2_vhxwg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2117980867]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -100.0
+offset_right = 268.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r33we")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=480538607]
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1337679126]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpyy4")
+text = "MISSION CONTROL (MENU)"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1257893649]
+stream = ExtResource("3_vhxwg")
+autoplay = true
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MenuButton" to="." method="_on_menu_credits_button_pressed"]
