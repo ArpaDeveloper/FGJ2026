@@ -1,13 +1,12 @@
 extends Control
 
-#Reference to the menu, options
+# References to the menu, options
 @onready var menu = $Menu1
 @onready var options = $Menu2
 
 func _ready() -> void:
 	menu.visible = true
 	options.visible = false
-
 
 #This playbutton
 func _on_start_pressed() -> void:

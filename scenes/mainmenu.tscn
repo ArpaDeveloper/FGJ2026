@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn7hjbxga1t3r"]
 
 [ext_resource type="Script" uid="uid://b7qrtu30foxrs" path="res://scripts/main_menu.gd" id="1_natt5"]
-[ext_resource type="Texture2D" uid="uid://bx6rtesoj5ldf" path="res://assets/mainmenu/bgmainmenu1.png" id="2_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://bx6rtesoj5ldf" path="res://assets/UIbg/bgmainmenu1.png" id="2_3vvtq"]
 [ext_resource type="Script" uid="uid://d2erfi6il82ya" path="res://scripts/settings.gd" id="3_3vvtq"]
 [ext_resource type="Script" uid="uid://b46sqn6s56sr1" path="res://scripts/buttoniconshow.gd" id="3_7yvfd"]
 [ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/music/Duck5test.mp3" id="3_r3g3c"]
@@ -35,6 +35,7 @@ corner_radius_top_right = 45
 corner_radius_bottom_left = 45
 
 [node name="Mainmenu" type="Control" unique_id=1024783261]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

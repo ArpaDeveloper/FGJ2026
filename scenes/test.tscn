@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://d2ursgbw4asfm"]
+[gd_scene format=3 uid="uid://bimm0o84u3p1c"]
 
-[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="1_player"]
-[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/hunter-sketch.png" id="2_bl13t"]
-[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/duck-sketch.png" id="2_iyx0m"]
-[ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="3_enemy"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="2_j5jx5"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="3_enemy"]
+[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="4_lpvoh"]
+[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="5_at5dv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
 radius = 20.0
@@ -21,7 +22,7 @@ script = ExtResource("1_player")
 shape = SubResource("CircleShape2D_bl13t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=365774715]
-texture = ExtResource("2_iyx0m")
+texture = ExtResource("2_j5jx5")
 
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=902981177]
 position = Vector2(600, 300)
@@ -32,7 +33,7 @@ shape = SubResource("CircleShape2D_bl13t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1301346956]
 modulate = Color(1, 0.3, 0.3, 1)
-texture = ExtResource("2_bl13t")
+texture = ExtResource("4_lpvoh")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1785057595]
 
@@ -61,3 +62,19 @@ rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=451846762]
 shape = SubResource("RectangleShape2D_wall")
+
+[node name="Control" type="Control" parent="." unique_id=287212944]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1155.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Pausemenu" parent="Control" unique_id=598723302 instance=ExtResource("5_at5dv")]
+layout_mode = 1
