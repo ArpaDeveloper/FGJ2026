@@ -1,0 +1,43 @@
+[gd_scene format=4 uid="uid://dx1oilvl36a1e"]
+
+[ext_resource type="Texture2D" uid="uid://bygxal2r43bv7" path="res://assets/environment/water-spritesheet.png" id="1_xves1"]
+[ext_resource type="Texture2D" uid="uid://buir6ftjhmf6i" path="res://assets/environment/darkgrass-tilesheet.png" id="2_421ko"]
+[ext_resource type="Texture2D" uid="uid://b5els3vecirm" path="res://assets/environment/grass-tilesheet.png" id="3_2gvks"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bxmg"]
+resource_name = "Water"
+texture = ExtResource("1_xves1")
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6375"]
+resource_name = "Darkgrass"
+texture = ExtResource("2_421ko")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylpj7"]
+resource_name = "Grass"
+texture = ExtResource("3_2gvks")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_a4rx7"]
+sources/1 = SubResource("TileSetAtlasSource_c6375")
+sources/2 = SubResource("TileSetAtlasSource_ylpj7")
+sources/0 = SubResource("TileSetAtlasSource_2bxmg")
+
+[node name="Level1" type="Node2D" unique_id=1710454779]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=842528575]
+tile_map_data = PackedByteArray("AAAXAA4AAAAAAAAAAAAYAA4AAAAAAAAAAAAYAA8AAAAAAAAAAAAZABAAAAAAAAAAAAAaABEAAAAAAAAAAAAaABIAAAAAAAAAAAAbABIAAAAAAAAAAAAbABMAAAAAAAAAAAAcABMAAAAAAAAAAAAdABMAAAAAAAAAAAAeABMAAAAAAAAAAAAfABMAAAAAAAAAAAAgABMAAAAAAAAAAAAhABMAAAAAAAAAAAAiABMAAAAAAAAAAAAiABIAAAAAAAAAAAAjABEAAAAAAAAAAAAkABEAAAAAAAAAAAAkABAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_a4rx7")
