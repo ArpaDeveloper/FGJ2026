@@ -4,14 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="2_j5jx5"]
 [ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="3_enemy"]
 [ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="4_lpvoh"]
-[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="5_at5dv"]
+[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="5_at5dv"]
 [ext_resource type="Script" uid="uid://dip413ytt8ebv" path="res://scripts/sniper_enemy.gd" id="6_sniper"]
+[ext_resource type="Texture2D" uid="uid://bhva3x2m0v32s" path="res://assets/environment/tree1.png" id="7_tree"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
 radius = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(1171, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tree"]
+radius = 30.0
 
 [node name="TestScene" type="Node2D" unique_id=1487832176]
 
@@ -79,6 +83,38 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=451846762]
 position = Vector2(-0.001447996, -400)
 shape = SubResource("RectangleShape2D_wall")
+
+[node name="Trees" type="Node2D" parent="." unique_id=491013821]
+
+[node name="Tree1" type="StaticBody2D" parent="Trees" unique_id=1226505970]
+position = Vector2(400, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree1" unique_id=1029856402]
+shape = SubResource("CircleShape2D_tree")
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree1" unique_id=239352592]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_tree")
+
+[node name="Tree2" type="StaticBody2D" parent="Trees" unique_id=521342128]
+position = Vector2(350, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree2" unique_id=2009179732]
+shape = SubResource("CircleShape2D_tree")
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree2" unique_id=807140409]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_tree")
+
+[node name="Tree3" type="StaticBody2D" parent="Trees" unique_id=979263193]
+position = Vector2(738, 447)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree3" unique_id=129163874]
+shape = SubResource("CircleShape2D_tree")
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree3" unique_id=118085195]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_tree")
 
 [node name="Control" type="Control" parent="." unique_id=287212944]
 layout_mode = 3

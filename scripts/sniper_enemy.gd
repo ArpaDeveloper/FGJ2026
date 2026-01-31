@@ -59,13 +59,13 @@ func _draw() -> void:
 	if not show_cone:
 		return
 	
-	# Draw current active cone
+	# Draw current active cone with occlusion
 	var current_angle = chase_angle if is_chasing else detection_angle
 	var half_angle = deg_to_rad(current_angle / 2)
 	var start_angle = - PI / 2 - half_angle
 	var end_angle = - PI / 2 + half_angle
 	
-	# Colors: purple (idle) -> magenta (spotted) -> red (fully aimed)
+	# Colors: purple (idle) -> red (fully aimed)
 	var idle_color = Color(0.5, 0, 1, 0.15)
 	var aimed_color = Color(1, 0, 0, 0.35)
 	var idle_outline = Color(0.5, 0, 1, 0.4)
@@ -74,19 +74,42 @@ func _draw() -> void:
 	var cone_color = idle_color.lerp(aimed_color, aim_progress)
 	var outline_color = idle_outline.lerp(aimed_outline, aim_progress)
 	
-	# Draw filled cone
+	# Raycast to find visible cone shape
+	var space_state = get_world_2d().direct_space_state
 	var points = PackedVector2Array([Vector2.ZERO])
 	var num_points = 32
+	
 	for i in range(num_points + 1):
 		var angle = start_angle + (end_angle - start_angle) * i / num_points
-		var point = Vector2(cos(angle), sin(angle)) * detection_range
-		points.append(point)
+		var direction = Vector2(cos(angle), sin(angle))
+		var world_direction = direction.rotated(rotation)
+		var end_point = global_position + world_direction * detection_range
+		
+		var query = PhysicsRayQueryParameters2D.create(global_position, end_point)
+		# Exclude self and player from cone visualization
+		var exclude_list: Array[RID] = [get_rid()]
+		if player and player is CollisionObject2D:
+			exclude_list.append(player.get_rid())
+		query.exclude = exclude_list
+		query.collide_with_areas = false
+		
+		var result = space_state.intersect_ray(query)
+		
+		var local_point: Vector2
+		if result.is_empty():
+			local_point = direction * detection_range
+		else:
+			var hit_distance = (result.position - global_position).length()
+			local_point = direction * hit_distance
+		
+		points.append(local_point)
+	
 	draw_colored_polygon(points, cone_color)
 	
 	# Draw cone outline
-	draw_line(Vector2.ZERO, Vector2(cos(start_angle), sin(start_angle)) * detection_range, outline_color, 2.0)
-	draw_line(Vector2.ZERO, Vector2(cos(end_angle), sin(end_angle)) * detection_range, outline_color, 2.0)
-	draw_arc(Vector2.ZERO, detection_range, start_angle, end_angle, num_points, outline_color, 2.0)
+	if points.size() > 1:
+		for i in range(1, points.size()):
+			draw_line(points[i - 1] if i > 1 else Vector2.ZERO, points[i], outline_color, 1.0)
 
 
 func is_player_in_cone(cone_angle: float) -> bool:
@@ -105,7 +128,25 @@ func is_player_in_cone(cone_angle: float) -> bool:
 	var forward_angle = rotation - PI / 2
 	var angle_diff = angle_difference(angle_to_player, forward_angle)
 	
-	return abs(angle_diff) < deg_to_rad(cone_angle / 2)
+	if abs(angle_diff) >= deg_to_rad(cone_angle / 2):
+		return false
+	
+	# Check line of sight with raycast
+	return has_line_of_sight()
+
+
+func has_line_of_sight() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, player.global_position)
+	query.exclude = [ self ]
+	query.collide_with_areas = false
+	
+	var result = space_state.intersect_ray(query)
+	
+	# If no hit, or hit the player, we have line of sight
+	if result.is_empty():
+		return true
+	return result.collider.is_in_group("player")
 
 
 func angle_difference(angle1: float, angle2: float) -> float:
