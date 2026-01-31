@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="2_j5jx5"]
 [ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="3_enemy"]
 [ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="4_lpvoh"]
-[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="5_at5dv"]
+[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="5_at5dv"]
 [ext_resource type="Script" uid="uid://dip413ytt8ebv" path="res://scripts/sniper_enemy.gd" id="6_sniper"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bl13t"]
@@ -81,7 +81,6 @@ position = Vector2(-0.001447996, -400)
 shape = SubResource("RectangleShape2D_wall")
 
 [node name="Control" type="Control" parent="." unique_id=287212944]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

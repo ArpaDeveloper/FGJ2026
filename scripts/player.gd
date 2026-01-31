@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var acceleration: float = 2500.0
 @export var friction: float = 2200.0
 
-
 func _physics_process(delta: float) -> void:
 	# Get input direction
 	var input_direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
