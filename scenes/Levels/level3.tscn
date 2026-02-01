@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_34ocj"]
 [ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="2_h7ipp"]
-[ext_resource type="Script" path="res://scripts/goalpost.gd" id="3_020lu"]
+[ext_resource type="Script" uid="uid://dctpeblbg3o8e" path="res://scripts/goalpost.gd" id="3_020lu"]
 [ext_resource type="Script" uid="uid://03h7osl0j0gp" path="res://scripts/mask_pickup.gd" id="4_mdtll"]
 [ext_resource type="Texture2D" uid="uid://drwj6abbh18r0" path="res://assets/environment/mask-black.png" id="5_4a7ko"]
 [ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="6_gi13k"]
@@ -388,9 +388,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Pausemenu" parent="Control" unique_id=598723302 instance=ExtResource("2_h7ipp")]
-layout_mode = 1
-offset_left = 540.0
-offset_top = 256.0
-offset_right = 530.0
-offset_bottom = 252.0
+[node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=1792530798]
+
+[node name="Pausemenu" parent="Control/CanvasLayer" unique_id=598723302 instance=ExtResource("2_h7ipp")]
+size_flags_horizontal = 4
