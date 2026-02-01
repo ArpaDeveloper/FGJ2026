@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var friction: float = 2200.0
 @export var grace_duration: float = 3.0
 @export var mask_cooldown: float = 5.0
+@export var mask_speed_bonus: float = 50.0
 
 var has_mask: bool = false
 var grace_active: bool = false
@@ -28,9 +29,11 @@ func _physics_process(delta: float) -> void:
 	# Get input direction
 	var input_direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+	var current_speed = speed + (mask_speed_bonus if grace_active else 0.0)
+	
 	# Apply acceleration or friction
 	if input_direction.length() > 0:
-		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
+		velocity = velocity.move_toward(input_direction * current_speed, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	
