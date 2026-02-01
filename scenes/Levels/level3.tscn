@@ -3,6 +3,9 @@
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_34ocj"]
 [ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_h7ipp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ipp"]
+size = Vector2(1171, 50)
+
 [node name="Level 3" type="Node2D" unique_id=208564588]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=478568867]
@@ -13,10 +16,37 @@ tile_set = ExtResource("1_34ocj")
 tile_map_data = PackedByteArray("AAAFACQACQAAAAAAAAAGACQACQAAAAAAAAAHACQACQAAAAAAAAAIACQACQAAAAAAAAAJACQACQAAAAAAAAAJACUACQAAAAAAAAAJACYACQAAAAAAAAAJACcACQAAAAAAAAAJACgACQAAAAAAAAAIACgACQAAAAAAAAAIACcACQAAAAAAAAAIACYACQAAAAAAAAAIACUACQAAAAAAAAAHACUACQAAAAAAAAAHACYACQAAAAAAAAAHACcACQAAAAAAAAAHACgACQAAAAAAAAAGACgACQAAAAAAAAAGACcACQAAAAAAAAAGACYACQAAAAAAAAAGACUACQAAAAAAAAAFACUACQAAAAAAAAAFACYACQAAAAAAAAAFACcACQAAAAAAAAAFACgACQAAAAAAAAAiAAAACgAAAAAAAAAkAAMACgAAAAAAAAAmAAEACgAAAAAAAAAmAAUACgAAAAAAAAAiAAYACgAAAAAAAAANAAUADwAAAAAAAAAMAAYADwAAAAAAAAABAAUADwAAAAAAAAAOABEADwAAAAAAAAApAA8ADwAAAAAAAAApAA0ADwAAAAAAAAAoAA8ADwAAAAAAAAA+AAkADwAAAAAAAAA7AAkADwAAAAAAAABBABwADwAAAAAAAABBAB0ADwAAAAAAAABAAB0ADwAAAAAAAAAsABwADwAAAAAAAAAuAB0ADwAAAAAAAAAfACAADwAAAAAAAAAdAB4ADwAAAAAAAAAaABAADgAAAAAAAAAbABEADgAAAAAAAAAbABIADgAAAAAAAAAbABMADgAAAAAAAAAbABQADgAAAAAAAAAbABUADgAAAAAAAAAbABYADgAAAAAAAAAaABcADgAAAAAAAAApABoADgAAAAAAAAAoABoADgAAAAAAAAAnABoADgAAAAAAAAAnABkADgAAAAAAAAAnABgADgAAAAAAAAApABgADgAAAAAAAAApABkADgAAAAAAAAAqAA4ADgAAAAAAAAApAA4ADgAAAAAAAAAoAA4ADgAAAAAAAAAoAA0ADgAAAAAAAAA8AAkADgAAAAAAAAA8AAoADgAAAAAAAAA7AAoADgAAAAAAAAA6AAkADgAAAAAAAABAABwADgAAAAAAAAA/ABwADgAAAAAAAAA/AB0ADgAAAAAAAAAtABwADgAAAAAAAAAuABwADgAAAAAAAAAoABgADwAAAAAAAAAqABkADwAAAAAAAAAqABsADwAAAAAAAAAYAAkADwAAAAAAAAAZAAoADwAAAAAAAAApABMAEQAAAAAAAAA=")
 tile_set = ExtResource("1_34ocj")
 
-[node name="LevelBorders" type="StaticBody2D" parent="." unique_id=1921556873]
+[node name="Walls" type="Node2D" parent="." unique_id=588915285]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelBorders" unique_id=1708862529]
-polygon = PackedVector2Array(0, 0, 0, 656, 1152, 656, 1152, 0)
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1054939109]
+position = Vector2(400, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=1743387103]
+position = Vector2(187.5, -50)
+shape = SubResource("RectangleShape2D_h7ipp")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=1379613478]
+position = Vector2(400, 575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=1641522455]
+position = Vector2(179, 100)
+shape = SubResource("RectangleShape2D_h7ipp")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=59477598]
+position = Vector2(25, 300)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=314415727]
+position = Vector2(6.000181, 49.999977)
+shape = SubResource("RectangleShape2D_h7ipp")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1579207464]
+position = Vector2(775, 300)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=909990537]
+position = Vector2(-0.001447996, -400)
+shape = SubResource("RectangleShape2D_h7ipp")
 
 [node name="Control" type="Control" parent="." unique_id=571593037]
 layout_mode = 3

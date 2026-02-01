@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://didio4f03u8so" path="res://assets/environment/weapons-on-ground.png" id="3_t1r2p"]
 [ext_resource type="Texture2D" uid="uid://bodf24n37ntf3" path="res://assets/environment/flageurope-Sheet.png" id="4_bux10"]
 [ext_resource type="Texture2D" uid="uid://d4eciuswa8x0j" path="res://assets/environment/roof1.png" id="4_c8twv"]
+[ext_resource type="Texture2D" uid="uid://cvsqg43d0wivg" path="res://assets/environment/gravel_path-grass2.png" id="4_dv26a"]
 [ext_resource type="Texture2D" uid="uid://b0he26bwxjoqk" path="res://assets/environment/barrel.png" id="4_tu70l"]
 [ext_resource type="Texture2D" uid="uid://drn3x676iswaw" path="res://assets/environment/mud.png" id="5_831e8"]
+[ext_resource type="Texture2D" uid="uid://b4d4q5x24w6mm" path="res://assets/environment/gravel_path-grass.png" id="5_anvck"]
 [ext_resource type="Texture2D" uid="uid://bpi3ry22rdmcq" path="res://assets/environment/3barrels.png" id="5_c2162"]
 [ext_resource type="Texture2D" uid="uid://btgxkkie5bj0w" path="res://assets/Enemies/goose.png" id="6_d7lk7"]
 [ext_resource type="Texture2D" uid="uid://dwm76pws3maym" path="res://assets/environment/gravel_path.png" id="6_t1r2p"]
@@ -44,6 +46,7 @@ texture = ExtResource("3_t1r2p")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7h6c"]
+<<<<<<< Updated upstream
 resource_name = "Goal"
 texture = ExtResource("4_bux10")
 0:0/animation_frame_0/duration = 1.0
@@ -54,6 +57,13 @@ texture = ExtResource("4_bux10")
 0:0/animation_frame_5/duration = 1.0
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
+=======
+texture = ExtResource("4_dv26a")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xcvy"]
+texture = ExtResource("5_anvck")
+>>>>>>> Stashed changes
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y35bq"]
@@ -187,3 +197,7 @@ sources/16 = SubResource("TileSetAtlasSource_wtdby")
 sources/17 = SubResource("TileSetAtlasSource_2tda1")
 sources/18 = SubResource("TileSetAtlasSource_rcrbi")
 sources/11 = SubResource("TileSetAtlasSource_b7h6c")
+<<<<<<< Updated upstream
+=======
+sources/12 = SubResource("TileSetAtlasSource_0xcvy")
+>>>>>>> Stashed changes
