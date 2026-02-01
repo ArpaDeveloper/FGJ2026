@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5els3vecirm" path="res://assets/environment/grass-tilesheet.png" id="2_y2xbu"]
 [ext_resource type="Texture2D" uid="uid://buir6ftjhmf6i" path="res://assets/environment/darkgrass-tilesheet.png" id="3_7k4x1"]
 [ext_resource type="Texture2D" uid="uid://didio4f03u8so" path="res://assets/environment/weapons-on-ground.png" id="3_t1r2p"]
+[ext_resource type="Texture2D" uid="uid://bodf24n37ntf3" path="res://assets/environment/flageurope-Sheet.png" id="4_bux10"]
 [ext_resource type="Texture2D" uid="uid://d4eciuswa8x0j" path="res://assets/environment/roof1.png" id="4_c8twv"]
 [ext_resource type="Texture2D" uid="uid://b0he26bwxjoqk" path="res://assets/environment/barrel.png" id="4_tu70l"]
 [ext_resource type="Texture2D" uid="uid://drn3x676iswaw" path="res://assets/environment/mud.png" id="5_831e8"]
@@ -40,6 +41,19 @@ texture = ExtResource("2_831e8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5max"]
 texture = ExtResource("3_t1r2p")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7h6c"]
+resource_name = "Goal"
+texture = ExtResource("4_bux10")
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y35bq"]
@@ -172,3 +186,4 @@ sources/15 = SubResource("TileSetAtlasSource_1w1i7")
 sources/16 = SubResource("TileSetAtlasSource_wtdby")
 sources/17 = SubResource("TileSetAtlasSource_2tda1")
 sources/18 = SubResource("TileSetAtlasSource_rcrbi")
+sources/11 = SubResource("TileSetAtlasSource_b7h6c")
