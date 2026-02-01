@@ -1,8 +1,5 @@
 extends Control
 
-#Reference to the menu, options
-@onready var menu = $Menu1
-@onready var options = $Menu2
 
 #volume slider
 func _on_volume_value_changed(value: float) -> void:
@@ -28,9 +25,3 @@ func _on_resolutions_item_selected(index: int) -> void:
 			DisplayServer.window_set_size(Vector2i(1600, 900))
 		2:
 			DisplayServer.window_set_size(Vector2i(1280, 720))
-
-
-#This is backbutton
-func _on_back_pressed() -> void:
-	menu.visible = true
-	options.visible = false

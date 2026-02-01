@@ -240,7 +240,9 @@ func _draw() -> void:
 			
 			points.append(local_point)
 	
-	draw_colored_polygon(points, cone_color)
+	# Only draw polygon if we have enough valid points
+	if points.size() >= 3:
+		draw_colored_polygon(points, cone_color)
 	
 	# Draw cone outline
 	if points.size() > 1:
