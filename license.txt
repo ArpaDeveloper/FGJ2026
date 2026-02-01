@@ -1,0 +1,48 @@
+This game's original code and custom assets are licensed under the MIT License.
+Copyright (c) 2026 DD22
+
+------------------------------------------------------------
+THIRD-PARTY AUDIO ASSETS
+------------------------------------------------------------
+The following sound effects are included in this project under their 
+respective licenses.
+
+1. "Flatline 1" by magnuswaker 
+   Source: https://freesound.org/s/528831/
+   License: Creative Commons 0 (Public Domain)
+
+2. "Level Up:Mission Complete (Primal) 2.wav" by SilverIllusionist 
+   Source: https://freesound.org/s/665205/
+   License: Attribution 4.0 (CC BY 4.0)
+   Link: https://creativecommons.org/licenses/by/4.0/
+
+3. "duck attacked.wav" by crazyduckman 
+   Source: https://freesound.org/s/185547/
+   License: Attribution 3.0 (CC BY 3.0)
+   Link: https://creativecommons.org/licenses/by/3.0/
+
+4. "enemy spotted.wav" by tim.kahn 
+   Source: https://freesound.org/s/106313/
+   License: Attribution 4.0 (CC BY 4.0)
+   Link: https://creativecommons.org/licenses/by/4.0/
+
+------------------------------------------------------------
+THE MIT LICENSE (For the game software)
+------------------------------------------------------------
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+THE SOFTWARE.
