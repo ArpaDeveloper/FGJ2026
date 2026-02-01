@@ -265,15 +265,25 @@ func _draw() -> void:
 			prev_hit_collider = hit_collider
 			prev_hit_distance = hit_distance
 	
-	# Only draw polygon if we have enough valid points
-	if points.size() >= 3:
-		draw_colored_polygon(points, cone_color)
+	# Filter out duplicate/very close points to avoid triangulation errors
+	var filtered_points = PackedVector2Array([Vector2.ZERO])
+	for i in range(1, points.size()):
+		var point = points[i]
+		var last_point = filtered_points[filtered_points.size() - 1]
+		# Only add if point is far enough from the last one
+		if point.distance_to(last_point) > 0.5:
+			filtered_points.append(point)
 	
-	if points.size() > 2:
-		draw_line(Vector2.ZERO, points[1], outline_color, 1.5)
-		for i in range(1, points.size() - 1):
-			draw_line(points[i], points[i + 1], outline_color, 1.5)
-		draw_line(points[points.size() - 1], Vector2.ZERO, outline_color, 1.5)
+	# Only draw polygon if we have enough valid points
+	if filtered_points.size() >= 3:
+		draw_colored_polygon(filtered_points, cone_color)
+	
+	# Draw outline
+	if filtered_points.size() > 2:
+		draw_line(Vector2.ZERO, filtered_points[1], outline_color, 1.5)
+		for i in range(1, filtered_points.size() - 1):
+			draw_line(filtered_points[i], filtered_points[i + 1], outline_color, 1.5)
+		draw_line(filtered_points[filtered_points.size() - 1], Vector2.ZERO, outline_color, 1.5)
 
 
 func is_player_in_cone_no_los(cone_angle: float) -> bool:
