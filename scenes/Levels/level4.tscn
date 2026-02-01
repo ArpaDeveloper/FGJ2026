@@ -2,7 +2,9 @@
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_420oj"]
 [ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="2_u0pin"]
+[ext_resource type="Script" uid="uid://03h7osl0j0gp" path="res://scripts/mask_pickup.gd" id="2_ymip3"]
 [ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="3_hx844"]
+[ext_resource type="Texture2D" uid="uid://drwj6abbh18r0" path="res://assets/environment/mask-black.png" id="3_sfdhr"]
 [ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="4_5y5g1"]
 [ext_resource type="Texture2D" uid="uid://cp71er5u3qmw2" path="res://assets/Player/duck-stealthy-sheet.png" id="5_ymip3"]
 [ext_resource type="Texture2D" uid="uid://e4tirxysmogu" path="res://assets/Player/duck-stealthy.png" id="6_sfdhr"]
@@ -12,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bygy1kx8ydf6p" path="res://assets/Enemies/hunter-walk-sheet.png" id="10_tctk0"]
 [ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="11_jkk2f"]
 [ext_resource type="Script" uid="uid://dctpeblbg3o8e" path="res://scripts/goalpost.gd" id="12_5kug5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa37i"]
+radius = 25.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omel5"]
 size = Vector2(47, 47)
@@ -302,6 +307,16 @@ tile_set = ExtResource("1_420oj")
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer" unique_id=1124401527]
 tile_map_data = PackedByteArray("AABEAAUACwAAAAAAAAA=")
 tile_set = ExtResource("1_420oj")
+
+[node name="MaskPickup" type="Area2D" parent="." unique_id=1116109060]
+position = Vector2(216, 24)
+script = ExtResource("2_ymip3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaskPickup" unique_id=1458624715]
+shape = SubResource("CircleShape2D_wa37i")
+
+[node name="Sprite2D" type="Sprite2D" parent="MaskPickup" unique_id=1478006800]
+texture = ExtResource("3_sfdhr")
 
 [node name="Goal" type="Area2D" parent="." unique_id=1221508963]
 position = Vector2(1095, 89)
