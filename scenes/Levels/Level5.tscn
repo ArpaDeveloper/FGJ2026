@@ -385,7 +385,7 @@ animation = &"walk"
 autoplay = "walk"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=137689061]
-zoom = Vector2(4, 4)
+zoom = Vector2(0.3, 0.3)
 
 [node name="Walls" type="Node2D" parent="." unique_id=747204566]
 
@@ -420,7 +420,6 @@ position = Vector2(-0.001447996, -400)
 shape = SubResource("RectangleShape2D_hh687")
 
 [node name="Control" type="Control" parent="." unique_id=1227310614]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
