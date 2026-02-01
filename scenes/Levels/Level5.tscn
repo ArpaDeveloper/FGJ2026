@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bdr1x5tatvpqy"]
+[gd_scene format=4 uid="uid://0dhayuieyq8t"]
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_qy1si"]
 [ext_resource type="Script" uid="uid://dctpeblbg3o8e" path="res://scripts/goalpost.gd" id="2_66o5i"]

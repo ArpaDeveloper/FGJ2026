@@ -203,7 +203,7 @@ func _draw() -> void:
 	var outline_color = Color(1, 0, 0, 0.5) if is_chasing else Color(1, 1, 0, 0.4)
 	
 	var points = PackedVector2Array([Vector2.ZERO])
-	var num_points = 32
+	var num_points = 128 # More points more better
 	
 
 	if is_chasing:
@@ -214,6 +214,12 @@ func _draw() -> void:
 	else:
 		# Raycast to find visible cone shape
 		var space_state = get_world_2d().direct_space_state
+		var exclude_list: Array[RID] = [get_rid()]
+		if player and player is CollisionObject2D:
+			exclude_list.append(player.get_rid())
+		
+		var prev_hit_collider: Object = null
+		var prev_hit_distance: float = detection_range
 		
 		for i in range(num_points + 1):
 			var angle = start_angle + (end_angle - start_angle) * i / num_points
@@ -222,32 +228,52 @@ func _draw() -> void:
 			var end_point = global_position + world_direction * detection_range
 			
 			var query = PhysicsRayQueryParameters2D.create(global_position, end_point)
-			# Exclude self and player from cone visualization
-			var exclude_list: Array[RID] = [get_rid()]
-			if player and player is CollisionObject2D:
-				exclude_list.append(player.get_rid())
 			query.exclude = exclude_list
 			query.collide_with_areas = false
 			
 			var result = space_state.intersect_ray(query)
 			
-			var local_point: Vector2
-			if result.is_empty():
-				local_point = direction * detection_range
-			else:
-				var hit_distance = (result.position - global_position).length()
-				local_point = direction * hit_distance
+			var hit_distance: float = detection_range
+			var hit_collider: Object = null
 			
-			points.append(local_point)
+			if not result.is_empty():
+				hit_distance = (result.position - global_position).length()
+				hit_collider = result.collider
+			
+
+			if i > 0 and (hit_collider != prev_hit_collider or abs(hit_distance - prev_hit_distance) > 5.0):
+				# Cast a few extra rays around the edge for precision
+				var prev_angle = start_angle + (end_angle - start_angle) * (i - 1) / num_points
+				for j in range(1, 4):
+					var edge_angle = prev_angle + (angle - prev_angle) * j / 4.0
+					var edge_direction = Vector2(cos(edge_angle), sin(edge_angle))
+					var edge_world_dir = edge_direction.rotated(rotation)
+					var edge_end = global_position + edge_world_dir * detection_range
+					
+					var edge_query = PhysicsRayQueryParameters2D.create(global_position, edge_end)
+					edge_query.exclude = exclude_list
+					edge_query.collide_with_areas = false
+					
+					var edge_result = space_state.intersect_ray(edge_query)
+					var edge_dist = detection_range
+					if not edge_result.is_empty():
+						edge_dist = (edge_result.position - global_position).length()
+					
+					points.append(edge_direction * edge_dist)
+			
+			points.append(direction * hit_distance)
+			prev_hit_collider = hit_collider
+			prev_hit_distance = hit_distance
 	
 	# Only draw polygon if we have enough valid points
 	if points.size() >= 3:
 		draw_colored_polygon(points, cone_color)
 	
-	# Draw cone outline
-	if points.size() > 1:
-		for i in range(1, points.size()):
-			draw_line(points[i - 1] if i > 1 else Vector2.ZERO, points[i], outline_color, 1.0)
+	if points.size() > 2:
+		draw_line(Vector2.ZERO, points[1], outline_color, 1.5)
+		for i in range(1, points.size() - 1):
+			draw_line(points[i], points[i + 1], outline_color, 1.5)
+		draw_line(points[points.size() - 1], Vector2.ZERO, outline_color, 1.5)
 
 
 func is_player_in_cone_no_los(cone_angle: float) -> bool:
