@@ -1,8 +1,17 @@
 [gd_scene format=4 uid="uid://163u66w1srxk"]
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_420oj"]
-[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_u0pin"]
+[ext_resource type="Script" uid="uid://dctpeblbg3o8e" path="res://scripts/goalpost.gd" id="2_2nee8"]
+[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="2_u0pin"]
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pin"]
+size = Vector2(1171, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mida0"]
+
+>>>>>>> Stashed changes
 [node name="Level 4" type="Node2D" unique_id=1198479114]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=171639254]
@@ -14,15 +23,22 @@ tile_set = ExtResource("1_420oj")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelBorder" unique_id=1734388500]
 polygon = PackedVector2Array(0, 0, 0, 656, 1152, 656, 1152, 0)
 
-[node name="Control" type="Control" parent="." unique_id=1987352074]
+[node name="Goal" type="Area2D" parent="." unique_id=1651594760]
+position = Vector2(116, 60)
+script = ExtResource("2_2nee8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1956666056]
+shape = SubResource("RectangleShape2D_mida0")
+
+[node name="Control" type="Control" parent="." unique_id=280248389]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 116.0
+offset_top = 60.0
+offset_right = 156.0
+offset_bottom = 100.0
 
-[node name="Pausemenu" parent="Control" unique_id=598723302 instance=ExtResource("2_u0pin")]
-layout_mode = 1
-offset_left = 526.0
-offset_top = 252.0
-offset_right = 526.0
-offset_bottom = 252.0
+[node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=1306634775]
+
+[node name="Pausemenu" parent="Control/CanvasLayer" unique_id=598723302 instance=ExtResource("2_u0pin")]
+size_flags_horizontal = 4
