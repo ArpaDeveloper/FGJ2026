@@ -14,6 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 		goal_reached.emit()
 		
 		if next_level.is_empty():
-			get_tree().change_scene_to_file("res://scenes/victorymenu.tscn")
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/victorymenu.tscn")
 		else:
-			get_tree().change_scene_to_file(next_level)
+			get_tree().call_deferred("change_scene_to_file", next_level)
