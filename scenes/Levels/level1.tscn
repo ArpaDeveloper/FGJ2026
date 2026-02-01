@@ -422,7 +422,6 @@ autoplay = "walk"
 curve = SubResource("Curve2D_erp1l")
 
 [node name="Control" type="Control" parent="." unique_id=522408242]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -19.0
