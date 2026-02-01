@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1a23wmy6rvb5" path="res://scripts/victorymenu.gd" id="1_6gknr"]
 [ext_resource type="Texture2D" uid="uid://dkuyiyy0dfl0f" path="res://assets/UIbg/victorymenu.png" id="2_6gknr"]
-[ext_resource type="AudioStream" uid="uid://dtxxvajgs5s34" path="res://assets/music/Duck5test.mp3" id="3_nugff"]
+[ext_resource type="AudioStream" uid="uid://dpk13th3sbfen" path="res://assets/music/Victorysong.mp3" id="3_nugff"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r33we"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

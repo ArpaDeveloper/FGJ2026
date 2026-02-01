@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cce32jpahvcyv"]
+[gd_scene format=3 uid="uid://m117km6bvmrs"]
 
 [ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="1_7p1mj"]
-[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/hunter-sketch.png" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="2_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 

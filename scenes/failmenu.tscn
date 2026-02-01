@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpf1purc3vjme" path="res://scripts/failmenu.gd" id="1_wun7g"]
 [ext_resource type="Texture2D" uid="uid://1y4fpath5bnn" path="res://assets/UIbg/gameoverscreen.png" id="2_wun7g"]
+[ext_resource type="AudioStream" uid="uid://c2gg8ng5cbkue" path="res://assets/music/finaldeathsound.mp3" id="3_gwaum"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r33we"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -56,6 +57,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_vpyy4")
 text = "MISSION CONTROL (MENU)"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1379707033]
+stream = ExtResource("3_gwaum")
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/RestartButton" to="." method="_on_restart_level_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MenuButton" to="." method="_on_menu_fail_button_pressed"]
