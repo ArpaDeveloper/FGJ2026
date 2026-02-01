@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ds5ojuchbvkru"]
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_xq6p0"]
-[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_djuqw"]
+[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="2_djuqw"]
 [ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="2_v6sju"]
 [ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="3_wtsr7"]
 [ext_resource type="Texture2D" uid="uid://cp71er5u3qmw2" path="res://assets/Player/duck-stealthy-sheet.png" id="4_erp1l"]
