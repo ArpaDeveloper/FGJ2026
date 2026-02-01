@@ -1,191 +1,92 @@
 [gd_scene format=4 uid="uid://ds5ojuchbvkru"]
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_xq6p0"]
-[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_djuqw"]
-[ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="2_v6sju"]
-[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="3_wtsr7"]
-[ext_resource type="Texture2D" uid="uid://bygy1kx8ydf6p" path="res://assets/Enemies/hunter-walk-sheet.png" id="4_erp1l"]
-[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="5_61u81"]
-[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="6_erhrb"]
-[ext_resource type="Texture2D" uid="uid://cp71er5u3qmw2" path="res://assets/Player/duck-stealthy-sheet.png" id="7_jsxby"]
-[ext_resource type="Texture2D" uid="uid://e4tirxysmogu" path="res://assets/Player/duck-stealthy.png" id="8_1u04e"]
-[ext_resource type="Texture2D" uid="uid://dwtm7iv4h02dh" path="res://assets/Player/duck-walk-sheet.png" id="9_u5n8i"]
+[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="2_djuqw"]
+[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="2_v6sju"]
+[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="3_wtsr7"]
+[ext_resource type="Texture2D" uid="uid://cp71er5u3qmw2" path="res://assets/Player/duck-stealthy-sheet.png" id="4_erp1l"]
+[ext_resource type="Texture2D" uid="uid://e4tirxysmogu" path="res://assets/Player/duck-stealthy.png" id="5_61u81"]
+[ext_resource type="Texture2D" uid="uid://dwtm7iv4h02dh" path="res://assets/Player/duck-walk-sheet.png" id="6_erhrb"]
+[ext_resource type="Script" uid="uid://dip413ytt8ebv" path="res://scripts/sniper_enemy.gd" id="7_jsxby"]
+[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="8_1u04e"]
+[ext_resource type="Texture2D" uid="uid://bygy1kx8ydf6p" path="res://assets/Enemies/hunter-walk-sheet.png" id="9_u5n8i"]
+[ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="10_wtsr7"]
 
-<<<<<<< Updated upstream
-[sub_resource type="CircleShape2D" id="CircleShape2D_v6sju"]
-=======
-[sub_resource type="CircleShape2D" id="CircleShape2D_0u6et"]
->>>>>>> Stashed changes
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6et"]
+size = Vector2(1171, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5jvf"]
 radius = 20.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth0"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth1"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth2"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth3"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth4"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth5"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(80, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth6"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(96, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hunter7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth7"]
 atlas = ExtResource("4_erp1l")
 region = Rect2(112, 0, 16, 16)
 
-<<<<<<< Updated upstream
-[sub_resource type="SpriteFrames" id="SpriteFrames_wtsr7"]
-=======
-[sub_resource type="SpriteFrames" id="SpriteFrames_x5jvf"]
->>>>>>> Stashed changes
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk0"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk1"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk2"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk3"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk4"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk5"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk6"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk7"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkcr3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_wtsr7")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hunter7")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 10.0
-}]
-
-<<<<<<< Updated upstream
-[sub_resource type="Curve2D" id="Curve2D_erp1l"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 10, -174, 0, 0, 0, 0, 161, -192, 0, 0, 0, 0, 381, 179, 0, 0, 0, 0, -56, 299, 0, 0, 0, 0, -156, -190)
-}
-point_count = 5
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ylpj7"]
-=======
-[sub_resource type="Curve2D" id="Curve2D_oc10i"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 307, 226, 0, 0, 0, 0, 319, 155, 0, 0, 0, 0, 375, 93, 0, 0, 0, 0, 447, 77, 0, 0, 0, 0, 455, 27, 0, 0, 0, 0, 420, -14, 0, 0, 0, 0, 330, -34, 0, 0, 0, 0, 320, -3, 0, 0, 0, 0, 287, 46, 0, 0, 0, 0, 258, 101, 0, 0, 0, 0, 266, 129, 0, 0, 0, 0, 282, 171, 0, 0, 0, 0, 288, 216)
-}
-point_count = 13
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_w43c8"]
->>>>>>> Stashed changes
-radius = 20.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth0"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth1"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth2"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth3"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth4"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth5"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth6"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_stealth7"]
-atlas = ExtResource("7_jsxby")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk0"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk1"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk2"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk3"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk4"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk5"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk6"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_walk7"]
-atlas = ExtResource("9_u5n8i")
-region = Rect2(112, 0, 16, 16)
-
-<<<<<<< Updated upstream
-[sub_resource type="SpriteFrames" id="SpriteFrames_ar5rt"]
-=======
-[sub_resource type="SpriteFrames" id="SpriteFrames_w6cwn"]
->>>>>>> Stashed changes
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_erhrb")
 }],
 "loop": true,
 "name": &"idle",
@@ -222,7 +123,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_1u04e")
+"texture": ExtResource("5_61u81")
 }],
 "loop": true,
 "name": &"stealth_idle",
@@ -258,22 +159,141 @@ animations = [{
 "speed": 10.0
 }]
 
-<<<<<<< Updated upstream
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylpj7"]
-size = Vector2(1171, 50)
-=======
-[sub_resource type="Curve2D" id="Curve2D_v6tak"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 73, 194, -8.071977, 16.764874, 8.071977, -16.764874, 70, 87, 0, 0, 0, 0, 33, 13, -0.62092125, 45.948174, 0.62092125, -45.948174, -1, -82, 0, 0, 0, 0, 56, -154, 73.26871, 3.1046066, -73.26871, -3.1046066, 63, -269, 0, 0, 0, 0, -19, -269, 40.9808, -15.523033, -40.9808, 15.523033, -104, -270, 0, 0, 0, 0, -112, -164, -36.01343, -45.948174, 36.01343, 45.948174, -49, -116, -16.143953, -27.320536, 16.143953, 27.320536, -5, -21, -13.039347, -36.634354, 13.039347, 36.634354, 57, 23, 1.2418425, -38.497116, -1.2418425, 38.497116, 90, 86, 0, 0, 0, 0, 100, 194)
-}
-point_count = 14
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6tak"]
+radius = 20.0
 
-[sub_resource type="Curve2D" id="Curve2D_qkcr3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter0"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter1"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter2"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter3"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter4"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter5"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter6"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter7"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oc10i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1u04e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erp1l"]
+radius = 17.720045
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61u81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1u04e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_wtsr7"]
 _data = {
-"points": PackedVector2Array(-4.5454545, -14.545454, 4.5454545, 14.545454, -436, 226, 0, 0, 0, 0, -347, 237, 0, 0, 0, 0, -297, 171, 0, 0, 0, 0, -290, 97, 0, 0, 0, 0, -265, 63, 35.454544, 54.545452, -35.454544, -54.545452, -266, 1, 0, 0, 0, 0, -363, 60, 0, 0, 0, 0, -428, 72, 0, 0, 0, 0, -471, 88, 0, 0, 0, 0, -458, 146, -9.090909, -20.90909, 9.090909, 20.90909, -508, 213)
+"points": PackedVector2Array(0, 0, 0, 0, 73, -30, 0, 0, 0, 0, -120, -162, 0, 0, 0, 0, -218, -158, 0, 0, 0, 0, -237, 88, 0, 0, 0, 0, -59, 86)
 }
-point_count = 11
->>>>>>> Stashed changes
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_erhrb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 96, -69, 0, 0, 0, 0, -98, -189, 0, 0, 0, 0, 54, -261, 0, 0, 0, 0, 28, -497)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_erp1l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 158, -92, 0, 0, 0, 0, -29, -72, 0, 0, 0, 0, -119, 65, 0, 0, 0, 0, -86, 180)
+}
+point_count = 4
 
 [node name="Level 1" type="Node2D" unique_id=579437957]
 
@@ -285,128 +305,121 @@ tile_set = ExtResource("1_xq6p0")
 tile_map_data = PackedByteArray("AABFACEAAwADAAEAAAA=")
 tile_set = ExtResource("1_xq6p0")
 
-<<<<<<< Updated upstream
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1488813040]
-position = Vector2(600, 300)
-script = ExtResource("2_v6sju")
-=======
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1018370199]
-position = Vector2(905, 538)
-script = ExtResource("2_v6sju")
+[node name="Walls" type="Node2D" parent="." unique_id=1387586717]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=574368009]
-shape = SubResource("CircleShape2D_0u6et")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=185902109]
-sprite_frames = SubResource("SpriteFrames_x5jvf")
-animation = &"walk"
-autoplay = "walk"
-
-[node name="Path2D" type="Path2D" parent="Enemy" unique_id=1796322400]
-position = Vector2(-292, -239)
-curve = SubResource("Curve2D_oc10i")
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1489835938 groups=["player"]]
-position = Vector2(72, 104)
-script = ExtResource("5_61u81")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=846667669]
-shape = SubResource("CircleShape2D_w43c8")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1860948648]
-sprite_frames = SubResource("SpriteFrames_w6cwn")
-animation = &"walk"
-autoplay = "walk"
-
-[node name="Hunter2_path" type="Path2D" parent="." unique_id=592650237]
-position = Vector2(655, 296)
-curve = SubResource("Curve2D_v6tak")
-
-[node name="Hunter2" type="CharacterBody2D" parent="Hunter2_path" unique_id=738523563]
-position = Vector2(86, 207)
-script = ExtResource("2_v6sju")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hunter2_path/Hunter2" unique_id=1827461299]
-shape = SubResource("CircleShape2D_0u6et")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hunter2_path/Hunter2" unique_id=1406007947]
-sprite_frames = SubResource("SpriteFrames_x5jvf")
-animation = &"walk"
-autoplay = "walk"
-
-[node name="Hunter1_path" type="Path2D" parent="." unique_id=1608526153]
-position = Vector2(600, 300)
-curve = SubResource("Curve2D_qkcr3")
-
-[node name="Hunter1" type="CharacterBody2D" parent="Hunter1_path" unique_id=1326372173]
-position = Vector2(-505, 215)
-script = ExtResource("2_v6sju")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hunter1_path/Hunter1" unique_id=970164301]
-shape = SubResource("CircleShape2D_0u6et")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hunter1_path/Hunter1" unique_id=146669583]
-sprite_frames = SubResource("SpriteFrames_x5jvf")
-animation = &"walk"
-autoplay = "walk"
-
-[node name="LevelBorders" type="StaticBody2D" parent="." unique_id=1350290995]
->>>>>>> Stashed changes
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=628095688]
-shape = SubResource("CircleShape2D_v6sju")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=947659494]
-sprite_frames = SubResource("SpriteFrames_wtsr7")
-animation = &"walk"
-autoplay = "walk"
-
-[node name="Path2D" type="Path2D" parent="Enemy" unique_id=1318293667]
-curve = SubResource("Curve2D_erp1l")
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=958840917 groups=["player"]]
-position = Vector2(88, 104)
-script = ExtResource("5_61u81")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=104884924]
-shape = SubResource("CircleShape2D_ylpj7")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1574512489]
-sprite_frames = SubResource("SpriteFrames_ar5rt")
-animation = &"walk"
-autoplay = "walk"
-
-[node name="Walls" type="Node2D" parent="." unique_id=1892000329]
-
-[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1391216686]
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1259529407]
 position = Vector2(400, 25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=1154591880]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=1581109230]
 position = Vector2(187.5, -50)
-shape = SubResource("RectangleShape2D_ylpj7")
+shape = SubResource("RectangleShape2D_0u6et")
 
-[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=46030585]
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=398045969]
 position = Vector2(400, 575)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=1337466468]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=2060742567]
 position = Vector2(179, 100)
-shape = SubResource("RectangleShape2D_ylpj7")
+shape = SubResource("RectangleShape2D_0u6et")
 
-[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=450606821]
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=609166965]
 position = Vector2(25, 300)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=150894023]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=224018474]
 position = Vector2(6.000181, 49.999977)
-shape = SubResource("RectangleShape2D_ylpj7")
+shape = SubResource("RectangleShape2D_0u6et")
 
-[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=718744828]
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=2041126703]
 position = Vector2(775, 300)
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=694479596]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1290626820]
 position = Vector2(-0.001447996, -400)
-shape = SubResource("RectangleShape2D_ylpj7")
+shape = SubResource("RectangleShape2D_0u6et")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1221099939 groups=["player"]]
+position = Vector2(64, 127)
+script = ExtResource("2_v6sju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=202700464]
+shape = SubResource("CircleShape2D_x5jvf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2016799433]
+sprite_frames = SubResource("SpriteFrames_qkcr3")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="SniperEnemy" type="CharacterBody2D" parent="." unique_id=1143563422]
+position = Vector2(126, 471)
+rotation = 1.4305141
+script = ExtResource("7_jsxby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SniperEnemy" unique_id=1656269077]
+shape = SubResource("CircleShape2D_v6tak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SniperEnemy" unique_id=469036606]
+sprite_frames = SubResource("SpriteFrames_oc10i")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=26462563]
+position = Vector2(254, 520)
+script = ExtResource("10_wtsr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=515996997]
+shape = SubResource("CircleShape2D_erp1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=1178663696]
+sprite_frames = SubResource("SpriteFrames_61u81")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Path2D" type="Path2D" parent="Enemy" unique_id=1729122179]
+curve = SubResource("Curve2D_wtsr7")
+
+[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=789945907]
+position = Vector2(599, 520)
+script = ExtResource("10_wtsr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2" unique_id=1467598879]
+shape = SubResource("CircleShape2D_erp1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy2" unique_id=617745461]
+sprite_frames = SubResource("SpriteFrames_61u81")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Path2D" type="Path2D" parent="Enemy2" unique_id=131064731]
+position = Vector2(32, 24)
+curve = SubResource("Curve2D_erhrb")
+
+[node name="SniperEnemy2" type="CharacterBody2D" parent="." unique_id=1484686480]
+position = Vector2(81.999985, 470.99997)
+rotation = 0.6728401
+script = ExtResource("7_jsxby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SniperEnemy2" unique_id=1951990805]
+shape = SubResource("CircleShape2D_v6tak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SniperEnemy2" unique_id=1695123853]
+sprite_frames = SubResource("SpriteFrames_oc10i")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Enemy3" type="CharacterBody2D" parent="." unique_id=1797253553]
+position = Vector2(931, 425)
+script = ExtResource("10_wtsr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3" unique_id=600405538]
+shape = SubResource("CircleShape2D_erp1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy3" unique_id=1868637308]
+sprite_frames = SubResource("SpriteFrames_61u81")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Path2D" type="Path2D" parent="Enemy3" unique_id=971315205]
+curve = SubResource("Curve2D_erp1l")
 
 [node name="Control" type="Control" parent="." unique_id=522408242]
 visible = false
