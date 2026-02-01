@@ -1,7 +1,299 @@
 [gd_scene format=4 uid="uid://ds5ojuchbvkru"]
 
 [ext_resource type="TileSet" uid="uid://buqelv0axwqfr" path="res://assets/Tilemaps/tilemap1.tres" id="1_xq6p0"]
-[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_djuqw"]
+[ext_resource type="PackedScene" uid="uid://dmsm7582xf7ul" path="res://scenes/pausemenu.tscn" id="2_djuqw"]
+[ext_resource type="Script" uid="uid://dgpcstodc3drr" path="res://scripts/player.gd" id="2_v6sju"]
+[ext_resource type="Texture2D" uid="uid://disyyunm2blv4" path="res://assets/Player/duck-sketch.png" id="3_wtsr7"]
+[ext_resource type="Texture2D" uid="uid://cp71er5u3qmw2" path="res://assets/Player/duck-stealthy-sheet.png" id="4_erp1l"]
+[ext_resource type="Texture2D" uid="uid://e4tirxysmogu" path="res://assets/Player/duck-stealthy.png" id="5_61u81"]
+[ext_resource type="Texture2D" uid="uid://dwtm7iv4h02dh" path="res://assets/Player/duck-walk-sheet.png" id="6_erhrb"]
+[ext_resource type="Script" uid="uid://dip413ytt8ebv" path="res://scripts/sniper_enemy.gd" id="7_jsxby"]
+[ext_resource type="Texture2D" uid="uid://b4yyjde3a5mgr" path="res://assets/Enemies/hunter-sketch.png" id="8_1u04e"]
+[ext_resource type="Texture2D" uid="uid://bygy1kx8ydf6p" path="res://assets/Enemies/hunter-walk-sheet.png" id="9_u5n8i"]
+[ext_resource type="Script" uid="uid://dq48lefkmwxvi" path="res://scripts/enemy.gd" id="10_wtsr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6et"]
+size = Vector2(1171, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5jvf"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth0"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth1"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth2"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth3"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth4"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth5"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth6"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stealth7"]
+atlas = ExtResource("4_erp1l")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk0"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk1"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk2"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk3"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk4"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk5"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk6"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walk7"]
+atlas = ExtResource("6_erhrb")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkcr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wtsr7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stealth7")
+}],
+"loop": true,
+"name": &"stealth",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_61u81")
+}],
+"loop": true,
+"name": &"stealth_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walk7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6tak"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter0"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter1"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter2"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter3"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter4"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter5"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter6"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hunter7"]
+atlas = ExtResource("9_u5n8i")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oc10i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1u04e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erp1l"]
+radius = 17.720045
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61u81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1u04e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hunter7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_wtsr7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 73, -30, 0, 0, 0, 0, -120, -162, 0, 0, 0, 0, -218, -158, 0, 0, 0, 0, -237, 88, 0, 0, 0, 0, -59, 86)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_erhrb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 96, -69, 0, 0, 0, 0, -98, -189, 0, 0, 0, 0, 54, -261, 0, 0, 0, 0, 28, -497)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_erp1l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 158, -92, 0, 0, 0, 0, -29, -72, 0, 0, 0, 0, -119, 65, 0, 0, 0, 0, -86, 180)
+}
+point_count = 4
 
 [node name="Level 1" type="Node2D" unique_id=579437957]
 
@@ -13,12 +305,124 @@ tile_set = ExtResource("1_xq6p0")
 tile_map_data = PackedByteArray("AABFACEAAwADAAEAAAA=")
 tile_set = ExtResource("1_xq6p0")
 
-[node name="LevelBorders" type="StaticBody2D" parent="." unique_id=1350290995]
+[node name="Walls" type="Node2D" parent="." unique_id=1387586717]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelBorders" unique_id=351305057]
-polygon = PackedVector2Array(0, 0, 0, 656, 1152, 656, 1152, -1)
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1259529407]
+position = Vector2(400, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=1581109230]
+position = Vector2(187.5, -50)
+shape = SubResource("RectangleShape2D_0u6et")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls" unique_id=398045969]
+position = Vector2(400, 575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall" unique_id=2060742567]
+position = Vector2(179, 100)
+shape = SubResource("RectangleShape2D_0u6et")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=609166965]
+position = Vector2(25, 300)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=224018474]
+position = Vector2(6.000181, 49.999977)
+shape = SubResource("RectangleShape2D_0u6et")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=2041126703]
+position = Vector2(775, 300)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1290626820]
+position = Vector2(-0.001447996, -400)
+shape = SubResource("RectangleShape2D_0u6et")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1221099939 groups=["player"]]
+position = Vector2(64, 127)
+script = ExtResource("2_v6sju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=202700464]
+shape = SubResource("CircleShape2D_x5jvf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2016799433]
+sprite_frames = SubResource("SpriteFrames_qkcr3")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="SniperEnemy" type="CharacterBody2D" parent="." unique_id=1143563422]
+position = Vector2(126, 471)
+rotation = 1.4305141
+script = ExtResource("7_jsxby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SniperEnemy" unique_id=1656269077]
+shape = SubResource("CircleShape2D_v6tak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SniperEnemy" unique_id=469036606]
+sprite_frames = SubResource("SpriteFrames_oc10i")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=26462563]
+position = Vector2(254, 520)
+script = ExtResource("10_wtsr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=515996997]
+shape = SubResource("CircleShape2D_erp1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" unique_id=1178663696]
+sprite_frames = SubResource("SpriteFrames_61u81")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Path2D" type="Path2D" parent="Enemy" unique_id=1729122179]
+curve = SubResource("Curve2D_wtsr7")
+
+[node name="Enemy2" type="CharacterBody2D" parent="." unique_id=789945907]
+position = Vector2(599, 520)
+script = ExtResource("10_wtsr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2" unique_id=1467598879]
+shape = SubResource("CircleShape2D_erp1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy2" unique_id=617745461]
+sprite_frames = SubResource("SpriteFrames_61u81")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Path2D" type="Path2D" parent="Enemy2" unique_id=131064731]
+position = Vector2(32, 24)
+curve = SubResource("Curve2D_erhrb")
+
+[node name="SniperEnemy2" type="CharacterBody2D" parent="." unique_id=1484686480]
+position = Vector2(81.999985, 470.99997)
+rotation = 0.6728401
+script = ExtResource("7_jsxby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SniperEnemy2" unique_id=1951990805]
+shape = SubResource("CircleShape2D_v6tak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SniperEnemy2" unique_id=1695123853]
+sprite_frames = SubResource("SpriteFrames_oc10i")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Enemy3" type="CharacterBody2D" parent="." unique_id=1797253553]
+position = Vector2(931, 425)
+script = ExtResource("10_wtsr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3" unique_id=600405538]
+shape = SubResource("CircleShape2D_erp1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy3" unique_id=1868637308]
+sprite_frames = SubResource("SpriteFrames_61u81")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Path2D" type="Path2D" parent="Enemy3" unique_id=971315205]
+curve = SubResource("Curve2D_erp1l")
 
 [node name="Control" type="Control" parent="." unique_id=522408242]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -19.0
