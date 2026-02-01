@@ -13,6 +13,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		goal_reached.emit()
 		
+		# Store current level path for victory menu
+		GameState.current_level_path = get_tree().current_scene.scene_file_path
+		
 		if next_level.is_empty():
 			get_tree().call_deferred("change_scene_to_file", "res://scenes/victorymenu.tscn")
 		else:
