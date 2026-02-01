@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 100.0
+@export var speed: float = 75.0
 @export var patrol_speed: float = 50.0
 @export var detection_range: float = 300.0
 @export var detection_angle: float = 60.0
